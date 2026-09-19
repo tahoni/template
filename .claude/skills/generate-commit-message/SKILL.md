@@ -1,0 +1,152 @@
+---
+name: generate-commit-message
+description: Generate a commit message (and matching CHANGELOG.md entry) for the current working tree changes, following AGENTS.md's Git Workflow conventions. Use whenever the user is about to commit, asks for a commit message/summary, or asks how to describe the current changes.
+user-invocable: true
+allowed-tools:
+  - Bash(git status:*)
+  - Bash(git diff:*)
+  - Bash(git --no-pager diff:*)
+  - Bash(git log:*)
+  - Bash(git --no-pager log:*)
+  - Bash(git merge-base:*)
+  - Bash(git branch:*)
+  - Read
+  - Edit
+---
+
+# Generate Commit Message
+
+This file is a **template**. Steps marked `*(fill in, if applicable)*` describe a pattern to adapt to this project's
+own stack and generated-output dependencies; everything else is reusable as-is.
+
+Optional scope narrowing may be passed as `args` when this skill is invoked (limit the message to specific files/areas;
+leave blank for all staged/unstaged changes).
+
+## 🔍 Gather current state
+
+Before drafting, run these yourself and read their output:
+
+1. `git status --short`
+2. `git --no-pager diff --stat`
+3. `git --no-pager diff HEAD` (full diff, staged and unstaged)
+4. Commits already made on this branch — context only, may include commits made outside this session by anyone:
+   ```
+   base=$(git merge-base develop HEAD 2>/dev/null || git merge-base main HEAD 2>/dev/null)
+   git --no-pager log --oneline "$base"..HEAD 2>/dev/null
+   git --no-pager diff --stat "$base"..HEAD 2>/dev/null
+   ```
+5. Read `CHANGELOG.md`'s current `[Unreleased]` section (heading depth matches this project's own convention — see
+   AGENTS.md's Documentation Conventions).
+6. Read `AGENTS.md` in full for conventions.
+7. *(fill in, if applicable)* If this project derives generated output — a sitemap, an API spec, a changelog digest,
+   etc. — from per-file/per-route/per-resource metadata that must be kept in sync (e.g. a "last updated" field), and
+   the diff touches a file that owns one of those, read its current value here so the matching step under
+   Instructions below can flag staleness.
+
+## 🚀 Instructions
+
+Read and strictly follow the **Git Workflow** section in AGENTS.md, plus its **Build & Run Commands** and
+**Architecture** sections for accurate technical detail (build/test commands, directory/package layout, architecture)
+when describing what changed. Treat it as the single source of truth; do not reinterpret or contradict its rules.
+
+This skill drafts a message for **whatever is currently staged/unstaged** — it is not limited to changes made in the
+current Claude session. Use the "commits already made on this branch" context above purely to stay consistent (matching
+scope naming, avoiding duplicate CHANGELOG entries for work already committed by anyone) — never fold already-committed
+work into the new message or CHANGELOG block. If that context reveals an already-committed change with no matching
+CHANGELOG entry, flag it to the user and point them at the `sync-unreleased-changes` skill rather than drafting it here.
+
+1. **Inspect the changes above**, do not guess — review the actual diff hunks so the message describes real behaviour,
+   not assumptions. If scope narrowing was passed in `args`, only consider matching files.
+2. **Compose the message**, following whichever shape this project's AGENTS.md documents under Git Workflow
+   Conventions — check it first rather than assuming. Two example shapes seen across projects built from this
+   template:
+
+   Plain imperative-mood (no prefix):
+   ```
+   <Brief, imperative-mood description>
+
+   - <optional bullet of notable detail>
+   - <optional bullet of notable detail>
+   ```
+
+   Scope-prefixed (Conventional-Commits-style):
+   ```
+   <scope>: <Brief description>
+
+   - <optional bullet of notable detail>
+   - <optional bullet of notable detail>
+   ```
+
+    - If AGENTS.md says this repository does **not** use Conventional Commits prefixes, commit messages are **plain,
+      imperative-mood descriptions** of the change, e.g. `Refactor email-related models: remove EmailContent, merge
+      functionality into EmailMessage and adjust dependent components`. Lead with an imperative verb
+      (Add/Fix/Update/Remove/Refactor/Bump/Rename…), name the specific thing changed, optionally followed by a colon
+      and further detail, or a second sentence for an unrelated but small follow-on change in the same commit.
+    - If AGENTS.md documents a scope-prefix convention instead, use `<scope>: <description>` — imperative or
+      descriptive, lower-case after the colon, no trailing period, ideally <= 72 characters, using the scope prefix
+      that matches this repo's history (`feat`, `fix`, `docs`, `refactor`, `test`, `chore`, etc.).
+    - **Body bullets**: optional. Include them only when the change is non-obvious or touches multiple areas; each
+      bullet should state *what* changed and *why*, not restate the file list.
+    - Backtick identifiers named in the message (component, file, constant, class).
+    - If the change closes a GitHub issue, add a trailer line `Closes #<issue>` — only when there genuinely is one;
+      don't invent a reference.
+3. **Draft `CHANGELOG.md` entries** for the notable changes, to go under the `[Unreleased]` section. Per AGENTS.md's
+   Documentation Conventions and the existing `[Unreleased]` entries in the file as a style reference:
+    - Match this project's own CHANGELOG.md heading depth for the Unreleased section, its Keep a Changelog category
+      headings (`Added`, `Changed`, `Fixed`, `Deprecated`, `Removed`, `Security`) and Area sub-headings — only the
+      categories that apply.
+    - Within each category, group related entries under an Area sub-header (e.g. `Components`, `Domain`, `Build &
+      Tooling`, `Dependencies`, `Documentation` — reuse an existing Area from CHANGELOG.md's recent entries where one
+      fits, rather than inventing a near-duplicate).
+    - Match the existing bullet style already used in this project's CHANGELOG.md — e.g. a plain factual description
+      with backticked identifiers (`` - Fixed the `@routes` path alias in `vite.config.ts` to resolve to
+      `src/shared/routes` ``), or a bold-lead-in style (`` - **`ShooterLog.powerFactor`:** New `PowerFactor` column —
+      snapshots are now scoped by power factor as well as firearm type ``) — these are illustrative only, not a fixed
+      choice; follow whichever pattern the file already establishes.
+    - Be specific: name the actual component/class/file/behaviour, not vague statements like "improved tests".
+4. **Group unrelated work**: if the diff contains clearly unrelated changes, propose separate commits with a message and
+   separate CHANGELOG entries for each rather than forcing one message.
+5. **British English** spelling, grammar and punctuation throughout (e.g. "licence", "colour", "initialise"), per
+   AGENTS.md's Documentation Conventions.
+6. **Sanity-check against conventions**: no secrets or credentials referenced, no vague messages such as "fixed stuff"
+   or "updates".
+7. *(fill in, if applicable)* **Flag stale generated-metadata fields**: if the matching step under Gather current
+   state found a per-file/per-route/per-resource metadata field that isn't already bumped in the diff itself, call
+   this out as a required addition to the commit — per AGENTS.md's Git Workflow Conventions, such fields typically
+   feed generated output (a sitemap, an API spec, etc.) and must move in the same change.
+
+## 📤 Output
+
+Do **not** run `git add` or `git commit` yourself — this skill only drafts, for the user to review and run.
+
+1. The final commit message(s) as fenced code blocks, each followed by a ready-to-run `git commit` command
+2. Any **CHANGELOG.md additions** in a separate fenced code block under the `[Unreleased]` section (the exact text to
+   add, so the user can copy it directly into CHANGELOG.md — per AGENTS.md's rule, this update belongs in the same
+   commit as the change it documents)
+3. *(fill in, if applicable)* Any stale generated-metadata field bump needed per step 7 above — name the field, its
+   current value and the value to change it to, plus a reminder of any regeneration command it feeds
+4. If proposing multiple commits, output one message block and one commit command per commit, in the order they should
+   be made, followed by a single consolidated CHANGELOG.md block with all entries
+
+Example output structure:
+
+**Commit 1:**
+
+```
+Add generate-commit-message skill for drafting commits and CHANGELOG entries
+```
+
+```bash
+git commit -m "Add generate-commit-message skill for drafting commits and CHANGELOG entries" ...
+```
+
+**CHANGELOG.md entries:**
+
+```markdown
+#### Added
+
+##### Tooling
+
+- Added a `generate-commit-message` skill that drafts commit messages and matching CHANGELOG.md entries from the
+  working tree diff
+```
