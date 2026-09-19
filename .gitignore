@@ -373,11 +373,11 @@ application-local.properties
 
 
 ## TAHONI
-/build
-/dist
-/target
-/logs
-/.idea
-/.run
+build/
+dist/
+target/
+logs/
+.idea/
+.run/
 
 .claude/*.local.*
