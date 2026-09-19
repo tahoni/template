@@ -33,7 +33,7 @@ Before drafting, run these yourself and read their output:
    `<version>`.
 3. `git --no-pager diff --stat main...HEAD` (changes relative to `main`)
 4. `git log main..HEAD --oneline` (commit log relative to `main`)
-5. Read `CHANGELOG.md`'s current `[Unreleased]` section.
+5. Read `CHANGELOG.md`'s current `### 🧪 [Unreleased]` section.
 6. Read `AGENTS.md` in full for conventions.
 
 ## 🚀 Instructions
@@ -65,16 +65,16 @@ Steps (mirroring AGENTS.md's Release Checklist):
 4. **Run the `sync-unreleased-changes` skill before touching CHANGELOG.md.** Diff it against whichever base branch
    AGENTS.md's Branching Model says this release branch was cut from and ships against (`main` if the release branch
    diffs against `main` to show everything it ships; `develop` if that's this project's release-cut base) — never skip
-   this even if `[Unreleased]` looks complete: it cross-checks every commit and any uncommitted diff against the
-   actual `[Unreleased]` entries, fills in anything missing, flags drifted entries and consolidates duplicate `Area`
-   sub-headers. The next step renames `[Unreleased]` wholesale, so it must be fully accurate first. If it flags any
-   entries as drifted, resolve those with the user before continuing — don't fold a flagged entry into the new version
-   section unresolved.
-5. **Promote `[Unreleased]` to a dated version entry.** Rename it `[$VERSION] - YYYY-MM-DD` (its entries now synced in
-   the previous step), matching this project's existing CHANGELOG.md heading depth, keeping only the categories that
-   apply (`➕ Added`, `🔄 Changed`, `🐛 Fixed`, `⚠️ Deprecated`, `🗑️ Removed`, `🔐 Security`) and their `Area`
-   subheadings. Update the Table of Contents and move the "← Current" marker to the new version, then start a fresh,
-   fully-empty `[Unreleased]` section above it (all category headings, empty).
+   this even if `### 🧪 [Unreleased]` looks complete: it cross-checks every commit and any uncommitted diff against
+   the actual `[Unreleased]` entries, fills in anything missing, flags drifted entries and consolidates duplicate
+   `##### <Area>` sub-headers. The next step renames `### 🧪 [Unreleased]` wholesale, so it must be fully accurate
+   first. If it flags any entries as drifted, resolve those with the user before continuing — don't fold a flagged
+   entry into the new version section unresolved.
+5. **Promote `### 🧪 [Unreleased]` to a dated version entry.** Rename it `### 🧾 [$VERSION] - YYYY-MM-DD` (its entries
+   now synced in the previous step), keeping only the categories that apply (`#### ➕ Added`, `#### 🔄 Changed`,
+   `#### 🐛 Fixed`, `#### ⚠️ Deprecated`, `#### 🗑️ Removed`, `#### 🔐 Security`) and their `##### <Area>` subheadings.
+   Update the Table of Contents and move the "← Current" marker to the new version, then start a fresh, fully-empty
+   `### 🧪 [Unreleased]` section above it (all category headings, empty).
 6. **Replace `RELEASE_NOTES.md`.** Unlike `CHANGELOG.md`, this file holds only the *current* release. Follow the
    established section order: Theme → Key Highlights → What's New (Added/Changed/Fixed/Removed) → Migration Guide →
    Statistics → Design Notes → Testing → Known Issues → Future Enhancements → Contributors → Notes. Cover
