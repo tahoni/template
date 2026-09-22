@@ -63,18 +63,15 @@ Whatever this project's boundary is, the same shared rules apply:
 7. **Don't duplicate the paired unit test's narrower, isolated-collaborator coverage** (from `scaffold-unit-tests`,
    if one exists for the same target) — this skill's job is the deeper, real-wiring sweep, not re-testing an
    individual collaborator's own isolated behaviour.
-8. **Don't test framework/language/ORM-generated trivial behaviour** (per AGENTS.md's Test Conventions) — focus
-   coverage on this project's own logic.
-9. **Match the existing style**, per AGENTS.md's Test Conventions — an Arrange-Act-Assert structure (comment only
-   the phases present; a test that only verifies a thrown error/exception may combine the last two into a single
-   `// Act & Assert`), method/route-under-test grouping, and private helpers moved to the end under `// Helpers`.
-10. **Run each new/extended test file/class as it's finished**, then run the full suite once at the end and confirm
-    everything passes before finishing — *(fill in)* this project's actual test-runner and lint/verify commands.
-11. **Update `CHANGELOG.md`** under its `[Unreleased]` section in the same change, per AGENTS.md's Git Workflow
-    conventions — matching this project's own heading depth for the Unreleased section, its categories and any
-    `Area` sub-headings — one entry per target if their scope differs, or a single combined entry if they're
-    closely related — only if the change is notable enough to warrant an entry.
-12. **Do not run `git add`, `git commit` or `git push` yourself** — this skill only scaffolds and verifies; leave
+8. **Follow AGENTS.md's Test Conventions for everything structural** — don't test framework/language/ORM-generated
+   trivial behaviour, Arrange-Act-Assert structure, method/route-under-test grouping, and private helpers moved to
+   the end under `// Helpers`. Don't restate those rules here; just apply them.
+9. **Run each new/extended test file/class as it's finished**, then run the full suite once at the end and confirm
+   everything passes before finishing — *(fill in)* this project's actual test-runner and lint/verify commands.
+10. **Update `CHANGELOG.md`** under its `### 🧪 [Unreleased]` section in the same change, per AGENTS.md's Git
+    Workflow Conventions (`#### <category>` → `##### <Area>`) — one entry per target if their scope differs, or a
+    single combined entry if they're closely related — only if the change is notable enough to warrant an entry.
+11. **Do not run `git add`, `git commit` or `git push` yourself** — this skill only scaffolds and verifies; leave
     the new/changed files for the user to review and commit.
 
 ## 📤 Output

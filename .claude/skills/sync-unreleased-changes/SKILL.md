@@ -51,31 +51,24 @@ changed. Treat it as the single source of truth.
    new/changed/fixed/deprecated/removed behaviour, public API, schema, config or documentation structure. Skip purely
    mechanical noise (formatting-only diffs, generated file churn) unless AGENTS.md calls it out specifically (e.g.
    dependency security overrides *are* notable).
-4. **For each notable change not already covered**, draft a CHANGELOG entry:
-    - Place it under the matching standard subheading (`#### ➕ Added`, `#### 🔄 Changed`, `#### 🐛 Fixed`,
-      `#### ⚠️ Deprecated`, `#### 🗑️ Removed`, `#### 🔐 Security`) — create the subheading if the file's
-      `### 🧪 [Unreleased]` section is missing it, in that category order.
-    - Group it under the right `##### <Area>` sub-header — matching existing area names already used in the file
-      where one fits (e.g. `Components`/`Styling`/`Build & Tooling` for a frontend, or
-      `Domain`/`Repositories`/`Configuration` for a backend service; the right set is project-specific — reuse
-      whatever's already established there); introduce a new one only if nothing existing fits.
-    - Each bullet is a plain, factual description of what changed and why, with backticked identifiers (component,
-      file, constant, class) — not a bold-lead-in label — matching the style used in `generate-commit-message` and
-      the existing `CHANGELOG.md` entries.
-    - British English spelling and grammar throughout.
+4. **For each notable change not already covered**, draft a CHANGELOG entry per AGENTS.md's Git Workflow Conventions
+   (category and Area heading depth, bullet style) — create a category/Area heading only if the file's
+   `### 🧪 [Unreleased]` section is missing it, in standard category order; reuse an existing Area name from the file
+   where one fits (project-specific — e.g. `Components`/`Styling` for a frontend, `Domain`/`Repositories` for a
+   backend service) rather than inventing a near-duplicate. British English spelling and grammar throughout.
 5. **For each change already covered**, verify the existing entry is still accurate against the actual diff (right
    file/class named, description still matches what the code does); flag any that have drifted, but don't rewrite
    entries that are still correct just to change their wording.
 6. **Do not remove or alter entries** for changes unrelated to this branch's diff — this skill only adds/corrects
    coverage for what this branch actually introduced.
 7. **Consolidate duplicate sub-headers across the whole `### 🧪 [Unreleased]` section**, not just newly added
-   entries — this catches drift left by earlier runs or by commits that each added their own `##### <Area>` block.
-   Within each `#### <Category>` section (`➕ Added`/`🔄 Changed`/`🐛 Fixed`/`⚠️ Deprecated`/`🗑️ Removed`/
-   `🔐 Security`), if the same `##### <Area>` heading appears more than once, merge every occurrence into a single
-   block at the position of its first occurrence; concatenate the bullets in their original relative order, then
-   delete the now-empty duplicate heading(s). Don't reorder, reword or deduplicate the surviving bullets themselves,
-   and don't merge headings that are only similarly named (e.g. `Components` and `Layouts`, or `Models` and `DTOs`)
-   unless the file already treats them as the same area.
+   entries — this catches drift left by earlier runs or by commits that each added their own `##### <Area>` block
+   (per AGENTS.md's Git Workflow Conventions for the exact heading structure). Within each category section, if the
+   same Area heading appears more than once, merge every occurrence into a single block at the position of its first
+   occurrence; concatenate the bullets in their original relative order, then delete the now-empty duplicate
+   heading(s). Don't reorder, reword or deduplicate the surviving bullets themselves, and don't merge headings that
+   are only similarly named (e.g. `Components` and `Layouts`, or `Models` and `DTOs`) unless the file already treats
+   them as the same area.
 8. **Apply the edits directly to `CHANGELOG.md`** using Edit — new bullets under their correct subheading/area (creating
    empty category headings only if genuinely needed, matching the file's existing heading order), plus the sub-header
    consolidation from step 7; do not leave the fix as a suggestion. Do not touch the Table of Contents or any released

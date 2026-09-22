@@ -66,23 +66,17 @@ Steps (mirroring AGENTS.md's Release Checklist):
    AGENTS.md's Branching Model says this release branch was cut from and ships against (`main` if the release branch
    diffs against `main` to show everything it ships; `develop` if that's this project's release-cut base) — never skip
    this even if `### 🧪 [Unreleased]` looks complete: it cross-checks every commit and any uncommitted diff against
-   the actual `[Unreleased]` entries, fills in anything missing, flags drifted entries and consolidates duplicate
-   `##### <Area>` sub-headers. The next step renames `### 🧪 [Unreleased]` wholesale, so it must be fully accurate
-   first. If it flags any entries as drifted, resolve those with the user before continuing — don't fold a flagged
-   entry into the new version section unresolved.
-5. **Promote `### 🧪 [Unreleased]` to a dated version entry.** Rename it `### 🧾 [$VERSION] - YYYY-MM-DD` (its entries
-   now synced in the previous step), keeping only the categories that apply (`#### ➕ Added`, `#### 🔄 Changed`,
-   `#### 🐛 Fixed`, `#### ⚠️ Deprecated`, `#### 🗑️ Removed`, `#### 🔐 Security`) and their `##### <Area>` subheadings.
-   Update the Table of Contents and move the "← Current" marker to the new version, then start a fresh, fully-empty
-   `### 🧪 [Unreleased]` section above it (all category headings, empty).
-6. **Replace `RELEASE_NOTES.md`.** Unlike `CHANGELOG.md`, this file holds only the *current* release. Follow the
-   established section order: Theme → Key Highlights → What's New (Added/Changed/Fixed/Removed) → Migration Guide →
-   Statistics → Design Notes → Testing → Known Issues → Future Enhancements → Contributors → Notes. Cover
-   **everything** that changed for this version, not just the most recent commit. For the **Contributors** section,
-   list every unique commit author on the release branch since it diverged from `main` — `git log main..HEAD
-   --format='%an'` (or the equivalent GitHub "Contributors" view for the release's PRs), deduplicated — rather than a
-   generic placeholder like "Development Team", and include every account found; bots (e.g. `dependabot[bot]`,
-   `ImgBotApp`) included. Replace the previous version's content outright rather than appending to it.
+   the actual entries, fills in anything missing, flags drifted entries and consolidates duplicate Area sub-headers.
+   The next step renames `### 🧪 [Unreleased]` wholesale, so it must be fully accurate first. If it flags any entries
+   as drifted, resolve those with the user before continuing — don't fold a flagged entry into the new version
+   section unresolved.
+5. **Promote `### 🧪 [Unreleased]` to a dated version entry**, per AGENTS.md's Release Checklist and Git Workflow
+   Conventions (heading rename, category/Area structure, Table of Contents, "← Current" marker, fresh empty
+   `### 🧪 [Unreleased]` section) — its entries are already synced from the previous step.
+6. **Replace `RELEASE_NOTES.md`**, per AGENTS.md's Release Checklist section-order and Contributors sourcing
+   conventions. Cover **everything** that changed for this version, not just the most recent commit — scope the
+   Contributors command to this release: `git log main..HEAD --format='%an'` (or the equivalent GitHub "Contributors"
+   view for the release's PRs), deduplicated. Replace the previous version's content outright rather than appending.
 7. **Verify links and dates.** Confirm the `v$VERSION` tag slug and the `YYYY-MM-DD` date match between
    `CHANGELOG.md` and `RELEASE_NOTES.md`.
 8. **Extend `HISTORY.md`.** Add a Historical Timeline entry, a Phase and a Milestone for `$VERSION`, at the same
@@ -106,17 +100,12 @@ Steps (mirroring AGENTS.md's Release Checklist):
     Documentation rules).
 12. **Archive `RELEASE_NOTES.md`.** Once finalised, copy it byte-for-byte (no edits, no trimming) to
     `documentation/history/RELEASE_NOTES_v$VERSION.md`.
-13. **Write `documentation/history/PR_DESCRIPTION_v$VERSION.md`** — the body text for the release pull request. Keep
-    it small — a PR body, not a second `RELEASE_NOTES.md`: a few bullets per section, high-level only. Structure:
-    - `## 🎯 Summary` — two to four bullets on what the release is and why
-    - `## 📦 Key Changes` — condensed from the CHANGELOG entry's categories (Added/Changed/Fixed/Removed), high-level
-      rather than exhaustive
-    - `## 🧪 Test Plan` — checklist of what was verified (build, lint, tests, manual checks — *(fill in)* the actual
-      commands)
-    - `## 🔗 Related Documentation` — links to `RELEASE_NOTES.md`, `CHANGELOG.md`, `HISTORY.md`
-    - End the file with the standard Claude Code attribution footer (a blank line, then
-      `🤖 Generated with [Claude Code](https://claude.com/claude-code)`) — this is a PR description drafted by Claude
-      Code and should be marked as such, same as any other PR description it opens.
+13. **Write `documentation/history/PR_DESCRIPTION_v$VERSION.md`**, per AGENTS.md's Release Checklist structure for
+    this file. *(fill in)* the actual build/lint/test commands for the Test Plan checklist. Additionally, end the
+    file with the standard Claude Code attribution footer (a blank line, then
+    `🤖 Generated with [Claude Code](https://claude.com/claude-code)`) — this is a PR description drafted by Claude
+    Code and should be marked as such, same as any other PR description it opens; AGENTS.md doesn't cover this since
+    it's a Claude-Code-specific convention, not a project one.
 
 Commit these in logical chunks per AGENTS.md's Git Workflow — the version bump, the CHANGELOG/HISTORY/RELEASE_NOTES
 documentation, any evergreen-doc reverse-sync updates and the PR description are separate concerns unless trivially

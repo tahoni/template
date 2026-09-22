@@ -42,11 +42,10 @@ Before drafting, run these yourself and read their output:
 5. `git --no-pager diff <merge-base>..HEAD` (full diff of this branch against its base)
 6. `git status --short` (working tree status — uncommitted changes, if any)
 7. `git --no-pager diff HEAD` (uncommitted diff, staged and unstaged, if any)
-8. Read `documentation/roadmap/improvement-plan.md` and `improvement-plan-tasks.md` in full. Both group gaps into
-   three status sections — ✅ Completed, 🟡 Partially Completed, ⚪ Open — mirrored identically across the two
-   files. For every gap in 🟡 Partially Completed or ⚪ Open (i.e. not already annotated `✅ Closed`), note its
-   number, title and — most importantly — its **Proposed improvement** text: that's the concrete claim you're
-   checking the diff against.
+8. Read `documentation/roadmap/improvement-plan.md` and `improvement-plan-tasks.md` in full, per AGENTS.md's Roadmap
+   Planning structure. For every gap in 🟡 Partially Completed or ⚪ Open (i.e. not already annotated `✅ Closed`),
+   note its number, title and — most importantly — its **Proposed improvement** text: that's the concrete claim
+   you're checking the diff against.
 9. Read `AGENTS.md` in full for conventions.
 
 ## 🚀 Instructions

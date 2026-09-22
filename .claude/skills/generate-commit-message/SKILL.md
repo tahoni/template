@@ -56,7 +56,8 @@ CHANGELOG entry, flag it to the user and point them at the `sync-unreleased-chan
 
 1. **Inspect the changes above**, do not guess — review the actual diff hunks so the message describes real behaviour,
    not assumptions. If scope narrowing was passed in `args`, only consider matching files.
-2. **Compose the message** in this exact shape, per AGENTS.md's Git Workflow Conventions:
+2. **Compose the message**, per AGENTS.md's Git Workflow Conventions (plain imperative-mood, no Conventional Commits
+   prefix, unless AGENTS.md says this project has adopted one), in this shape:
 
    ```
    <Brief, imperative-mood description>
@@ -65,28 +66,16 @@ CHANGELOG entry, flag it to the user and point them at the `sync-unreleased-chan
    - <optional bullet of notable detail>
    ```
 
-    - This repository does **not** use Conventional Commits prefixes (`feat:`, `fix:`, `docs:`, etc.) — commit
-      messages are **plain, imperative-mood descriptions** of the change, e.g. `Refactor email-related models: remove
-      EmailContent, merge functionality into EmailMessage and adjust dependent components`. Lead with an imperative
-      verb (Add/Fix/Update/Remove/Refactor/Bump/Rename…), name the specific thing changed, optionally followed by a
-      colon and further detail, or a second sentence for an unrelated but small follow-on change in the same commit.
+    - Lead with an imperative verb (Add/Fix/Update/Remove/Refactor/Bump/Rename…), name the specific thing changed.
     - **Body bullets**: optional. Include them only when the change is non-obvious or touches multiple areas; each
       bullet should state *what* changed and *why*, not restate the file list.
     - Backtick identifiers named in the message (component, file, constant, class).
     - If the change closes a GitHub issue, add a trailer line `Closes #<issue>` — only when there genuinely is one;
       don't invent a reference.
-3. **Draft `CHANGELOG.md` entries** for the notable changes, to go under `### 🧪 [Unreleased]`. Per AGENTS.md's
-   Documentation Conventions and the existing `### 🧪 [Unreleased]` entries in the file as a style reference:
-    - Place entries under the matching standard subheading (`#### ➕ Added`, `#### 🔄 Changed`, `#### 🐛 Fixed`,
-      `#### ⚠️ Deprecated`, `#### 🗑️ Removed`, `#### 🔐 Security`) — only the ones that apply.
-    - Within each subheading, group related entries under a `##### <Area>` sub-header (e.g. `##### Components`,
-      `##### Build & Tooling`, `##### Dependencies`, `##### Documentation` — reuse an existing Area from
-      CHANGELOG.md's recent entries where one fits, rather than inventing a near-duplicate).
-    - Each bullet is a plain, factual description of what changed and why, with backticked identifiers (component,
-      file, constant, class) — not a bold-lead-in label — matching the existing style already used in the file, e.g.
-      `` - Fixed the `@routes` path alias to resolve to `src/shared/routes` ``.
-    - A security-relevant fix goes under `#### 🔐 Security`, not `#### 🔄 Changed`.
-    - Be specific: name the actual component/class/file/behaviour, not vague statements like "improved tests".
+3. **Draft `CHANGELOG.md` entries** for the notable changes, per AGENTS.md's Git Workflow Conventions (category and
+   Area heading depth, bullet style) — use the existing `### 🧪 [Unreleased]` entries in the file as a live style
+   reference too. A security-relevant fix goes under `#### 🔐 Security`, not `#### 🔄 Changed`. Be specific: name the
+   actual component/class/file/behaviour, not vague statements like "improved tests".
 4. **Group unrelated work**: if the diff contains clearly unrelated changes, propose separate commits with a message and
    separate CHANGELOG entries for each rather than forcing one message.
 5. **British English** spelling, grammar and punctuation throughout (e.g. "licence", "colour", "initialise"), per

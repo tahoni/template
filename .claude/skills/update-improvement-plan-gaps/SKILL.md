@@ -27,11 +27,9 @@ re-verify) — steer the audit toward it, but still do the full sweep below rath
 
 Read these fully before drafting anything — you cannot tell what's *new* without first knowing what's already tracked:
 
-1. `documentation/roadmap/improvement-plan.md` and `improvement-plan-tasks.md`, in full. Both group gaps into three
-   status sections — ✅ Completed, 🟡 Partially Completed, ⚪ Open — mirrored identically across the two files.
-   Note every gap's number, title, current section and status suffix (✅ Closed in vX.Y.Z / 🟡 Partially completed
-   in vX.Y.Z / no suffix if ⚪ Open) — this is the baseline you're diffing against, and gap numbers are never
-   reused or renumbered, even when a gap moves between sections.
+1. `documentation/roadmap/improvement-plan.md` and `improvement-plan-tasks.md`, in full, per AGENTS.md's Roadmap
+   Planning structure and status-transition rules. Note every gap's number, title, current section and status
+   suffix — this is the baseline you're diffing against.
 2. `git branch --show-current` — if it's a `release/vX.Y.Z` branch, that's the version any newly closed gap should be
    annotated with; don't guess or reuse an already-shipped version number (a gap closed by work on this branch was
    **not** closed in whatever version `HISTORY.md`'s most recent entry already covers).

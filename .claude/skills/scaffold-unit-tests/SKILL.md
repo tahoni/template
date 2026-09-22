@@ -55,11 +55,7 @@ Read and strictly follow **all conventions defined in AGENTS.md** — in particu
      a failure in this target's test) — but don't mock away the minimal scaffolding needed just to construct/render
      the target (e.g. a router/DI context it genuinely needs).
    - Do not mock the target's own direct inputs/parameters/props away — test them.
-4. **Don't test generated or trivial pass-through behaviour** — per AGENTS.md's Test Conventions, skip
-   language/framework/ORM-generated members (constructors, getters/setters, `toString()`/`equals()`/`hashCode()`,
-   builders) and type-system-only checks with no accompanying custom logic. Using such generated members incidentally
-   to build fixtures or assert real behaviour is fine; only test them directly when they're handwritten or add real
-   logic.
+4. **Don't test generated or trivial pass-through behaviour**, per AGENTS.md's Test Conventions.
 5. **Cover real behaviour**: valid inputs, edge cases (empty/null/undefined/blank) and error paths, asserting on
    observable output/behaviour rather than internal state. *(fill in, if applicable)* Note any project-specific
    assertion idiom (e.g. asserting against a custom exception hierarchy; querying rendered output by role/text rather

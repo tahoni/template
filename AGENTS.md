@@ -495,9 +495,13 @@ even then the same fix still lands on `develop` immediately afterwards (see Merg
   documentation update and a bug fix) into a single commit.
 - **Track complex work with a todo list.** For multistep or non-trivial tasks, maintain a tracked todo list and keep
   it updated as work progresses, so progress stays visible and the work stays on track.
-- **Update `CHANGELOG.md` in the same change.** Every notable change gets an entry under `### 🧪 [Unreleased]`, in the
-  matching Keep a Changelog category (`➕ Added`, `🔄 Changed`, `🐛 Fixed`, `⚠️ Deprecated`, `🗑️ Removed`,
-  `🔐 Security`) — as part of the change that makes it, not batched into a later, separate change.
+- **Update `CHANGELOG.md` in the same change.** Every notable change gets an entry under `### 🧪 [Unreleased]`, nested
+  one level deeper under the matching Keep a Changelog category heading (`#### ➕ Added`, `#### 🔄 Changed`,
+  `#### 🐛 Fixed`, `#### ⚠️ Deprecated`, `#### 🗑️ Removed`, `#### 🔐 Security` — only the ones that apply), and one
+  level deeper again under a `##### <Area>` sub-heading grouping related entries (reuse an existing Area from the
+  file's recent entries where one fits, rather than inventing a near-duplicate) — as part of the change that makes
+  it, not batched into a later, separate change. Each bullet is a plain, factual description of what changed and why,
+  with backticked identifiers (component, file, constant, class) — not a bold-lead-in label.
 - Commit messages are plain, imperative-mood descriptions of the change (e.g. "Refactor X: remove Y, merge
   functionality into Z"); this repository does not use a Conventional Commits prefix (`feat:`, `fix:`, etc.), unless
   the project explicitly adopts one.
