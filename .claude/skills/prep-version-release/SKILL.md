@@ -99,10 +99,14 @@ Steps (mirroring AGENTS.md's Release Checklist):
     keeping them all release-agnostic (no version numbers or counts that drift, per AGENTS.md's Evergreen
     Documentation rules).
 12. **Archive `RELEASE_NOTES.md`.** Once finalised, copy it byte-for-byte (no edits, no trimming) to
-    `documentation/history/RELEASE_NOTES_v$VERSION.md`.
-13. **Write `documentation/history/PR_DESCRIPTION_v$VERSION.md`**, per AGENTS.md's Release Checklist structure for
-    this file. *(fill in)* the actual build/lint/test commands for the Test Plan checklist. Additionally, end the
-    file with the standard Claude Code attribution footer (a blank line, then
+    `documentation/history/RELEASE_NOTES_v$VERSION.md` — or
+    `documentation/history/v<major>/RELEASE_NOTES_v$VERSION.md` if this project has adopted the per-major-version
+    subdirectory grouping from AGENTS.md's Documentation File Map (`<major>` is `$VERSION`'s leading number before
+    the first `.`, e.g. `7.2.0` → `v7`; create that `v<major>/` folder first if this is the first release of a new
+    major version).
+13. **Write `documentation/history/PR_DESCRIPTION_v$VERSION.md`** (same location as step 12 above), per AGENTS.md's
+    Release Checklist structure for this file. *(fill in)* the actual build/lint/test commands for the Test Plan
+    checklist. Additionally, end the file with the standard Claude Code attribution footer (a blank line, then
     `🤖 Generated with [Claude Code](https://claude.com/claude-code)`) — this is a PR description drafted by Claude
     Code and should be marked as such, same as any other PR description it opens; AGENTS.md doesn't cover this since
     it's a Claude-Code-specific convention, not a project one.
@@ -114,8 +118,8 @@ small. Do not run `git commit`, `git push` or open the PR yourself — draft the
 ## 📤 Output
 
 Once all files above are written, tell the user the release branch (`release/v$VERSION`) is ready to open as a PR
-against whichever branch AGENTS.md's Branching Model designates as the release-cut target, using
-`documentation/history/PR_DESCRIPTION_v$VERSION.md` as the PR body. If that target isn't `main` directly, remind them
+against whichever branch AGENTS.md's Branching Model designates as the release-cut target, using the
+`PR_DESCRIPTION_v$VERSION.md` written in step 13 above as the PR body. If that target isn't `main` directly, remind them
 a second promotion PR is still needed to actually ship the release — tag the resulting commit on `main` as
 `v$VERSION` *(fill in, if applicable)* — confirm this matches the tag format actually used in this project's existing
 `CHANGELOG.md`/`RELEASE_NOTES.md` links, since a project may have changed its tag format at some point in its

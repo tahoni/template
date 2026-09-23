@@ -347,6 +347,13 @@ These documentation-only folders supplement it:
   | `RELEASE_NOTES_vX.Y.Z.md`  | Archived snapshot of `RELEASE_NOTES.md` at release time    |
   | `PR_DESCRIPTION_vX.Y.Z.md` | The release pull request's body, archived for that version |
 
+  *(fill in, if applicable)* Once this folder accumulates enough releases to make browsing it unwieldy, group its
+  files into `v<major>/` subdirectories by major version (e.g. `documentation/history/v8/RELEASE_NOTES_v8.6.0.md`),
+  creating a new `v<major>/` folder the first time a release starts a new major version — see the Release Checklist
+  below. Similarly, if `HISTORY.md`'s own narrative grows too large, a phase-by-phase section of it can be split out
+  into a standing companion file living directly in `documentation/history/` (not per-version), e.g.
+  `documentation/history/EVOLUTION_OVERVIEW.md`.
+
 - **`documentation/roadmap/`** holds in-progress planning documents that sit outside the standard documentation set
   above — see [🛤️ Roadmap Planning](#-roadmap-planning) below for the file structure and conventions.
 - **`documentation/recommendations/`** holds the fuller rationale and current-codebase examples behind conventions
@@ -434,6 +441,18 @@ lives. The following structural rules apply regardless of language:
   alphabetically by name (for overloads, by parameter count then parameter type).
 - **Move private helper/fixture methods to the end of the test file**, under a `// Helpers` comment, so the tests
   themselves stay at the top, uninterrupted by setup code.
+- *(fill in, if applicable)* **For a layered, interface-based architecture** (e.g. a service backed by an interface
+  and its own implementation class), split coverage into up to three tiers rather than one do-everything test class:
+  1. A unit test of the interface's own public contract, exercised **through the interface type**, with every
+     dependency mocked.
+  2. A separate unit test for the implementation class's own protected/private helper methods that aren't declared
+     on the interface, likewise fully mocked.
+  3. An integration test exercising the same public contract end-to-end through the real, framework-wired
+     implementation, with no mocks.
+
+  Not every layer needs all three tiers — apply this split only where the interface/impl divide carries genuinely
+  independent logic worth testing separately. See the `scaffold-unit-tests`/`scaffold-integration-tests` skills
+  above for the detailed per-tier scaffolding rules.
 
 ---
 
@@ -548,9 +567,13 @@ before anything downstream references them:
     actual repository structure and correct any directory that's missing, renamed or gone stale, including tracked
     tooling directories (`.claude/`, `.github/`).
 11. **Archive `RELEASE_NOTES.md`.** Once finalised, copy it byte-for-byte (no edits, no trimming) to
-    `documentation/history/RELEASE_NOTES_vX.Y.Z.md`.
-12. **Write `documentation/history/PR_DESCRIPTION_vX.Y.Z.md`.** The body text for the release pull request. Keep it
-    small — a PR body, not a second `RELEASE_NOTES.md`: a few bullets per section, high-level only. Structure:
+    `documentation/history/RELEASE_NOTES_vX.Y.Z.md` — or `documentation/history/v<major>/RELEASE_NOTES_vX.Y.Z.md` if
+    this project has adopted the per-major-version subdirectory grouping described in the Documentation File Map
+    above (`<major>` is the leading number of `X.Y.Z` before the first `.`, e.g. `7.2.0` → `v7`; create that
+    `v<major>/` folder first if this is the first release of a new major version).
+12. **Write `documentation/history/PR_DESCRIPTION_vX.Y.Z.md`** (same location as step 11 above). The body text for
+    the release pull request. Keep it small — a PR body, not a second `RELEASE_NOTES.md`: a few bullets per section,
+    high-level only. Structure:
     - `## 🎯 Summary` — two to four bullets on what the release is and why
     - `## 📦 Key Changes` — condensed from the `CHANGELOG.md` entry's categories, high-level rather than exhaustive
     - `## 🧪 Test Plan` — checklist of what was verified (build, lint, tests, manual checks)
