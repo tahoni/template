@@ -35,24 +35,26 @@ Feature requests, suggestions for improvements and bugs can be logged using the 
 
 ## 🧩 What's Inside
 
-| Path                      | Purpose                                                                                                                                                                                                                                                                                                         |
-|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `AGENTS.md`               | The full conventions file — project overview, tech stack, build/run commands, environment variables, architecture, code quality & CI, documentation conventions, documentation file map, roadmap planning, Claude Code skills, test conventions, directory tree maintenance, git workflow and release checklist |
-| `CLAUDE.md`               | Thin pointer to `AGENTS.md`, kept only because Claude Code specifically looks for a file by that name                                                                                                                                                                                                           |
-| `.claude/skills/`         | Eight Claude Code skills automating `AGENTS.md`'s conventions — see its 🧩 Claude Code Skills section for the full list                                                                                                                                                                                         |
-| `.gitignore`, `.aiignore` | Baseline ignore patterns                                                                                                                                                                                                                                                                                        |
+| Path                                          | Purpose                                                                                                                                                                                                                                                                                                         |
+|-------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `AGENTS.md`                                      | The full conventions file — project overview, tech stack, build/run commands, environment variables, architecture, code quality & CI, documentation conventions, documentation file map, roadmap planning, Claude Code skills, test conventions, directory tree maintenance, git workflow and release checklist |
+| `CLAUDE.md`                                      | Thin pointer to `AGENTS.md`, kept only because Claude Code specifically looks for a file by that name                                                                                                                                                                                                           |
+| `README.md`, `HISTORY.md`, `CHANGELOG.md`, `RELEASE_NOTES.md` | Fill-in-template scaffolds for a scaffolded project's own copies of these four files, per `AGENTS.md`'s Documentation File Map — distinct from this template repository's own real versions, which live in `documentation/current/` (see below) |
+| `.claude/skills/`                                | Eight Claude Code skills automating `AGENTS.md`'s conventions — see its 🧩 Claude Code Skills section for the full list                                                                                                                                                                                         |
+| `.gitignore`, `.aiignore`                        | Baseline ignore patterns                                                                                                                                                                                                                                                                                        |
 
 ---
 
 ## 🚀 Getting Started
 
-1. Copy `AGENTS.md`, `CLAUDE.md`, `.claude/skills/`, `.gitignore` and `.aiignore` into the new project's repository
-   root.
+1. Copy `AGENTS.md`, `CLAUDE.md`, `README.md`, `HISTORY.md`, `CHANGELOG.md`, `RELEASE_NOTES.md`, `.claude/skills/`,
+   `.gitignore` and `.aiignore` into the new project's repository root.
 2. Work through `AGENTS.md` top to bottom, replacing every `*(fill in)*`/`*(fill in, if applicable)*` section with
    the project's own tech stack, commands, architecture and environment variables — sections marked
-   `*(reusable as-is)*` need no changes.
-3. Add the project's own `README.md`, `ARCHITECTURE.md`, `CONTRIBUTING.md` and `LICENSE.md`, per `AGENTS.md`'s
-   Documentation File Map.
+   `*(reusable as-is)*` need no changes. Do the same for `README.md`, `HISTORY.md`, `CHANGELOG.md` and
+   `RELEASE_NOTES.md`.
+3. Add the project's own `ARCHITECTURE.md`, `CONTRIBUTING.md` and `LICENSE.md` — no fill-in scaffolds are provided
+   for these yet — per `AGENTS.md`'s Documentation File Map.
 4. Start using the `.claude/skills/` — each one reads `AGENTS.md` in full before acting, so once it's filled in the
    skills work without further setup.
 
