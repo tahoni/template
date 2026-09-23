@@ -340,19 +340,24 @@ it rather than restating it, so it's the one to update first when a convention c
 These documentation-only folders supplement it:
 
 - **`documentation/history/`** holds one of each of the following files per released version, archived once the
-  release is finalised:
+  release is finalised, plus one standing exception — `EVOLUTION_OVERVIEW.md`, a single living file rather than a
+  per-version archive:
 
-  | File                       | Purpose                                                    |
-  |----------------------------|------------------------------------------------------------|
-  | `RELEASE_NOTES_vX.Y.Z.md`  | Archived snapshot of `RELEASE_NOTES.md` at release time    |
-  | `PR_DESCRIPTION_vX.Y.Z.md` | The release pull request's body, archived for that version |
+  | File                       | Purpose                                                                                                        |
+  |----------------------------|-----------------------------------------------------------------------------------------------------------------|
+  | `RELEASE_NOTES_vX.Y.Z.md`  | Archived snapshot of `RELEASE_NOTES.md` at release time                                                       |
+  | `PR_DESCRIPTION_vX.Y.Z.md` | The release pull request's body, archived for that version                                                    |
+  | `EVOLUTION_OVERVIEW.md`    | `HISTORY.md`'s companion — the full Phase-by-phase narrative, always split out here to keep `HISTORY.md` a manageable size |
 
-  *(fill in, if applicable)* Once this folder accumulates enough releases to make browsing it unwieldy, group its
-  files into `v<major>/` subdirectories by major version (e.g. `documentation/history/v8/RELEASE_NOTES_v8.6.0.md`),
-  creating a new `v<major>/` folder the first time a release starts a new major version — see the Release Checklist
-  below. Similarly, if `HISTORY.md`'s own narrative grows too large, a phase-by-phase section of it can be split out
-  into a standing companion file living directly in `documentation/history/` (not per-version), e.g.
-  `documentation/history/EVOLUTION_OVERVIEW.md`.
+  `HISTORY.md` always keeps its own "📖 Evolution Overview" section as a short pointer to `EVOLUTION_OVERVIEW.md`
+  under the same heading/anchor, so its Table of Contents entry still resolves — the full Phase narrative never
+  lives in `HISTORY.md` itself, even for a project's very first release; every other `HISTORY.md` section
+  (Historical Timeline, Key Learnings, Future Roadmap Implications, Conclusion, etc.) stays in `HISTORY.md`
+  unchanged. *(fill in, if applicable)* Separately, once this folder accumulates enough per-version releases to
+  make browsing it unwieldy, group the archived files into `v<major>/` subdirectories by major version (e.g.
+  `documentation/history/v8/RELEASE_NOTES_v8.6.0.md`), creating a new `v<major>/` folder the first time a release
+  starts a new major version — see the Release Checklist below; `EVOLUTION_OVERVIEW.md` is unaffected, staying
+  directly in `documentation/history/` since it isn't per-version.
 
 - **`documentation/roadmap/`** holds in-progress planning documents that sit outside the standard documentation set
   above — see [🛤️ Roadmap Planning](#-roadmap-planning) below for the file structure and conventions.
@@ -559,7 +564,11 @@ before anything downstream references them:
    depth as existing entries, placed at the top for reverse chronological order). If the release is significant
    enough to have shifted the project's trajectory, also thread it through any other sections that track
    version-by-version state. Use how the immediately preceding version was woven into those sections as the
-   template. A routine patch release may only need the Historical Timeline entry.
+   template. A routine patch release may only need the Historical Timeline entry. If the release is significant
+   enough to warrant a new narrative Phase, write that Phase entry to
+   `documentation/history/EVOLUTION_OVERVIEW.md`, not to `HISTORY.md` itself — its "📖 Evolution Overview" section
+   is always split out there (see the Documentation File Map above), keeping only a short pointer under the same
+   heading/anchor so the Table of Contents entry still resolves.
 9. **Update `CONTRIBUTING.md`** only if this version's changes affect developer setup, environment variables,
    development scripts, git workflow or testing conventions documented there.
 10. **Verify `ARCHITECTURE.md`'s Project Structure tree against disk.** Per-change Directory Tree Maintenance

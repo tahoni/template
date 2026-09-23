@@ -74,7 +74,9 @@ This template's own documentation is spread across a few files, each with a dist
 [`documentation/history/`](documentation/history) archives past releases' `RELEASE_NOTES_vX.Y.Z.md`/
 `PR_DESCRIPTION_vX.Y.Z.md` files, grouped into one subdirectory per major version (e.g.
 `documentation/history/v1/`), so past releases stay individually referenceable once `RELEASE_NOTES.md` moves on to
-the next version.
+the next version, plus one standing exception —
+[`EVOLUTION_OVERVIEW.md`](documentation/history/EVOLUTION_OVERVIEW.md), `HISTORY.md`'s companion holding the full
+Phase-by-phase narrative, split out to keep `HISTORY.md` a manageable size.
 
 `ARCHITECTURE.md`, `CONTRIBUTING.md` and `LICENSE.md` — named in `AGENTS.md`'s own Documentation File Map — don't
 exist yet for this template repository itself; they're intended for the projects scaffolded from it, per the

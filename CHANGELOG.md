@@ -34,6 +34,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   `documentation/history/v1/`), then reverted from an intermediate per-minor-version (`v<major>.<minor>/`) grouping
   back to per-major-version, with `AGENTS.md` and the `generate-pr-summary`/`prep-version-release`/
   `update-improvement-plan-gaps` skills updated to match each time
+- `HISTORY.md`'s "📖 Evolution Overview" section split out into new `documentation/history/EVOLUTION_OVERVIEW.md`
+  — previously an optional step for once `HISTORY.md` grew too large, now always split out from the first release
+  onward. `HISTORY.md` keeps a short pointer under the same heading/anchor, so its Table of Contents entry still
+  resolves; `AGENTS.md`'s Documentation File Map and Release Checklist, and the `prep-version-release` skill's
+  "Extend `HISTORY.md`" step, updated to match
 
 ### 🧾 [1.1.0] - 2026-09-23
 
