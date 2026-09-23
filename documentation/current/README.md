@@ -42,6 +42,7 @@ Feature requests, suggestions for improvements and bugs can be logged using the 
 | `README.md`, `ARCHITECTURE.md`, `CONTRIBUTING.md`, `HISTORY.md`, `CHANGELOG.md`, `RELEASE_NOTES.md`, `LICENSE.md` | Fill-in-template scaffolds for a scaffolded project's own copies of these files, per `AGENTS.md`'s Documentation File Map — `README.md`/`HISTORY.md`/`CHANGELOG.md`/`RELEASE_NOTES.md` are distinct from this template repository's own real versions, which live in `documentation/current/` (see below) |
 | `UI.md`                                          | Optional fill-in-template scaffold for a component-based frontend project's UI/layout documentation — delete rather than fill in for a non-frontend project, per `AGENTS.md`'s Documentation File Map |
 | `PACKAGES.md`                                    | Optional fill-in-template scaffold for a dependency/funding manifest (e.g. `npm fund` output) — delete rather than fill in for a project whose package manager has no equivalent tooling, per `AGENTS.md`'s Documentation File Map |
+| `HELP.md`                                        | Optional template for framework-generated reference links (e.g. Spring Initializr) — replace with the actual generated file (or delete), per `AGENTS.md`'s Documentation File Map |
 | `.claude/skills/`                                | Eight Claude Code skills automating `AGENTS.md`'s conventions — see its 🧩 Claude Code Skills section for the full list                                                                                                                                                                                         |
 | `.gitignore`, `.aiignore`                        | Baseline ignore patterns                                                                                                                                                                                                                                                                                        |
 
@@ -56,9 +57,10 @@ Feature requests, suggestions for improvements and bugs can be logged using the 
    the project's own tech stack, commands, architecture and environment variables — sections marked
    `*(reusable as-is)*` need no changes. Do the same for the other seven files above, choosing an actual licence
    (or swapping in a different one entirely) for `LICENSE.md`.
-3. Copy `UI.md` and `PACKAGES.md` too, but only where each applies — `UI.md` for a component-based frontend,
-   `PACKAGES.md` for a package manager with equivalent funding-tree tooling — deleting whichever one doesn't rather
-   than leaving it unfilled.
+3. Copy `UI.md`, `PACKAGES.md` and `HELP.md` too, but only where each applies — `UI.md` for a component-based
+   frontend, `PACKAGES.md` for a package manager with equivalent funding-tree tooling, `HELP.md` for a stack with an
+   equivalent scaffolding-tool-generated reference file — deleting whichever doesn't apply rather than leaving it
+   unfilled.
 4. Start using the `.claude/skills/` — each one reads `AGENTS.md` in full before acting, so once it's filled in the
    skills work without further setup.
 
