@@ -33,11 +33,11 @@ project's own details and delete these template notes once done.
 
 ## 📖 Project Overview
 
-*(fill in)* One short paragraph: what the project is, who it's for, and its shape at a glance — e.g. "is a
+*(fill in)* One short paragraph: what the project is, who it's for and its shape at a glance — e.g. "is a
 [frontend/backend/library/CLI] for [domain]". State plainly whether this repository is standalone (no
 backend/frontend counterpart) or one half of a paired frontend/backend system, and link the other half if so.
 
-- **Entry point:** *(fill in)* — e.g. dev server URL, listening port, or CLI command.
+- **Entry point:** *(fill in)* — e.g. dev server URL, listening port or CLI command.
 - **API docs / other key URL:** *(fill in, if applicable)* — e.g. Swagger UI, Storybook, generated docs.
 
 ---
@@ -430,7 +430,7 @@ lives. The following structural rules apply regardless of language:
 - Prefer testing behaviour and observable output over implementation details; avoid brittle assertions on
   private/internal state or over-specified mock-call-count checks.
 - Don't write tests whose sole purpose is verifying language/framework/ORM-generated trivial behaviour — e.g. the
-  type system, a generated getter/setter, or a trivial pass-through constructor with no custom logic. Using such
+  type system, a generated getter/setter or a trivial pass-through constructor with no custom logic. Using such
   generated members incidentally to build fixtures or assert real behaviour is fine; only test them directly when
   they're handwritten or contain custom logic.
 - Follow an Arrange-Act-Assert structure, marking each phase present with a comment (`// Arrange`, `// Act`,

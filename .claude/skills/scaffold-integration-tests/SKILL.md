@@ -58,13 +58,13 @@ Whatever this project's boundary is, the same shared rules apply:
    component/route, or its interface's public methods), never reaching into protected/private internals via
    casts, reflection or test-only backdoors; those are the paired unit test's job.
 6. **Cover the target's full observable behaviour end-to-end**: primary happy paths, edge cases/format quirks
-   specific to the target, and error paths — asserting via this project's own conventions (rendered output,
+   specific to the target and error paths — asserting via this project's own conventions (rendered output,
    thrown-exception hierarchy, persisted state, etc.), more thoroughly than the corresponding unit test.
 7. **Don't duplicate the paired unit test's narrower, isolated-collaborator coverage** (from `scaffold-unit-tests`,
    if one exists for the same target) — this skill's job is the deeper, real-wiring sweep, not re-testing an
    individual collaborator's own isolated behaviour.
 8. **Follow AGENTS.md's Test Conventions for everything structural** — don't test framework/language/ORM-generated
-   trivial behaviour, Arrange-Act-Assert structure, method/route-under-test grouping, and private helpers moved to
+   trivial behaviour, Arrange-Act-Assert structure, method/route-under-test grouping and private helpers moved to
    the end under `// Helpers`. Don't restate those rules here; just apply them.
 9. **Run each new/extended test file/class as it's finished**, then run the full suite once at the end and confirm
    everything passes before finishing — *(fill in)* this project's actual test-runner and lint/verify commands.
