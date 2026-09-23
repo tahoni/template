@@ -88,17 +88,17 @@ A detailed explanation of the architecture can be found in the [`ARCHITECTURE.md
 This project's documentation is spread across a few files, each with a distinct purpose. *(reusable as-is — keep
 this table in sync with `AGENTS.md`'s Documentation File Map, the canonical version if the two ever drift)*
 
-| File                                    | Purpose                                                                        |
-|------------------------------------------|--------------------------------------------------------------------------------|
-| [`README.md`](README.md)                 | Project overview, setup and links to the rest of the documentation (this file) |
-| [`ARCHITECTURE.md`](ARCHITECTURE.md)      | Detailed architectural design, directory/package structure and core concepts   |
-| [`CLAUDE.md`](CLAUDE.md)                  | Thin pointer to `AGENTS.md`, kept for tools that specifically read `CLAUDE.md` |
-| [`AGENTS.md`](AGENTS.md)                  | Cross-tool agent conventions — the full guidance                              |
-| [`CONTRIBUTING.md`](CONTRIBUTING.md)      | Contributor-facing setup, git workflow and pull request checklist              |
-| [`CHANGELOG.md`](CHANGELOG.md)            | Notable changes per released version, in Keep a Changelog format               |
-| [`HISTORY.md`](HISTORY.md)                | Narrative history of the project's evolution across all versions               |
-| [`RELEASE_NOTES.md`](RELEASE_NOTES.md)    | Detailed release notes for the current/latest version only                     |
-| [`LICENSE.md`](LICENSE.md)                | Project licence                                                                |
+| File                                   | Purpose                                                                        |
+|----------------------------------------|--------------------------------------------------------------------------------|
+| [`README.md`](README.md)               | Project overview, setup and links to the rest of the documentation (this file) |
+| [`ARCHITECTURE.md`](ARCHITECTURE.md)   | Detailed architectural design, directory/package structure and core concepts   |
+| [`CLAUDE.md`](CLAUDE.md)               | Thin pointer to `AGENTS.md`, kept for tools that specifically read `CLAUDE.md` |
+| [`AGENTS.md`](AGENTS.md)               | Cross-tool agent conventions — the full guidance                               |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md)   | Contributor-facing setup, git workflow and pull request checklist              |
+| [`CHANGELOG.md`](CHANGELOG.md)         | Notable changes per released version, in Keep a Changelog format               |
+| [`HISTORY.md`](HISTORY.md)             | Narrative history of the project's evolution across all versions               |
+| [`RELEASE_NOTES.md`](RELEASE_NOTES.md) | Detailed release notes for the current/latest version only                     |
+| [`LICENSE.md`](LICENSE.md)             | Project licence                                                                |
 
 *(fill in, if applicable)* Add stack-specific docs the project needs — e.g. `UI.md`, `PACKAGES.md`, `HELP.md` — per
 `AGENTS.md`'s Documentation File Map.
