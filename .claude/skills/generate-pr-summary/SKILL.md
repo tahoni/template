@@ -14,9 +14,9 @@ than guessing.
 ## 🔍 Gather current state
 
 1. Read `documentation/history/PR_DESCRIPTION_v<version>.md` — or
-   `documentation/history/v<major>/PR_DESCRIPTION_v<version>.md` if this project groups that folder into
-   per-major-version subdirectories (`<major>` is `<version>`'s leading number before the first `.`, e.g. `7.2.0` →
-   `v7`; check AGENTS.md's Documentation File Map if unsure which layout applies). If it doesn't exist, tell the
+   `documentation/history/v<major>.<minor>/PR_DESCRIPTION_v<version>.md` if this project groups that folder into
+   per-minor-version subdirectories (`<major>.<minor>` is `<version>`'s leading `major.minor` pair, e.g. `7.2.0` →
+   `v7.2`; check AGENTS.md's Documentation File Map if unsure which layout applies). If it doesn't exist, tell the
    user to run the `prep-version-release` skill for that version first, and stop.
 2. Read `RELEASE_NOTES_v<version>.md` from the same location as step 1. If it doesn't exist, same as above.
 3. Read `AGENTS.md` for conventions.

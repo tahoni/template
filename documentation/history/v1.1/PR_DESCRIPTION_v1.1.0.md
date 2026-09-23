@@ -26,7 +26,7 @@
 
 ## 🔗 Related Documentation
 
-- [RELEASE_NOTES.md](/documentation/history/RELEASE_NOTES_v1.1.0.md)
+- [RELEASE_NOTES.md](/documentation/history/v1.1/RELEASE_NOTES_v1.1.0.md)
 - [CHANGELOG.md](/CHANGELOG.md)
 - [HISTORY.md](/HISTORY.md)
 
