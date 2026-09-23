@@ -27,10 +27,10 @@ project's own details and delete these template notes once done.
 Stack section, naming the tool rather than a pinned version:
 
 | Component | Technology     |
-|-----------|-----------------|
-| Framework | {{framework}}   |
-| Language  | {{language}}    |
-| Build     | {{build tool}}  |
+|-----------|----------------|
+| Framework | {{framework}}  |
+| Language  | {{language}}   |
+| Build     | {{build tool}} |
 
 ---
 
