@@ -343,10 +343,10 @@ These documentation-only folders supplement it:
   release is finalised, plus one standing exception — `EVOLUTION_OVERVIEW.md`, a single living file rather than a
   per-version archive:
 
-  | File                       | Purpose                                                                                                        |
-  |----------------------------|-----------------------------------------------------------------------------------------------------------------|
-  | `RELEASE_NOTES_vX.Y.Z.md`  | Archived snapshot of `RELEASE_NOTES.md` at release time                                                       |
-  | `PR_DESCRIPTION_vX.Y.Z.md` | The release pull request's body, archived for that version                                                    |
+  | File                       | Purpose                                                                                                                    |
+  |----------------------------|----------------------------------------------------------------------------------------------------------------------------|
+  | `RELEASE_NOTES_vX.Y.Z.md`  | Archived snapshot of `RELEASE_NOTES.md` at release time                                                                    |
+  | `PR_DESCRIPTION_vX.Y.Z.md` | The release pull request's body, archived for that version                                                                 |
   | `EVOLUTION_OVERVIEW.md`    | `HISTORY.md`'s companion — the full Phase-by-phase narrative, always split out here to keep `HISTORY.md` a manageable size |
 
   `HISTORY.md` always keeps its own "📖 Evolution Overview" section as a short pointer to `EVOLUTION_OVERVIEW.md`

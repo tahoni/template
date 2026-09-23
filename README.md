@@ -35,12 +35,12 @@ Feature requests, suggestions for improvements and bugs can be logged using the 
 
 ## 🧩 What's Inside
 
-| Path                      | Purpose                                                                                             |
-|---------------------------|-------------------------------------------------------------------------------------------------------|
+| Path                      | Purpose                                                                                                                                                                                                                                                                                                         |
+|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `AGENTS.md`               | The full conventions file — project overview, tech stack, build/run commands, environment variables, architecture, code quality & CI, documentation conventions, documentation file map, roadmap planning, Claude Code skills, test conventions, directory tree maintenance, git workflow and release checklist |
-| `CLAUDE.md`               | Thin pointer to `AGENTS.md`, kept only because Claude Code specifically looks for a file by that name |
-| `.claude/skills/`         | Eight Claude Code skills automating `AGENTS.md`'s conventions — see its 🧩 Claude Code Skills section for the full list |
-| `.gitignore`, `.aiignore` | Baseline ignore patterns                                                                               |
+| `CLAUDE.md`               | Thin pointer to `AGENTS.md`, kept only because Claude Code specifically looks for a file by that name                                                                                                                                                                                                           |
+| `.claude/skills/`         | Eight Claude Code skills automating `AGENTS.md`'s conventions — see its 🧩 Claude Code Skills section for the full list                                                                                                                                                                                         |
+| `.gitignore`, `.aiignore` | Baseline ignore patterns                                                                                                                                                                                                                                                                                        |
 
 ---
 
@@ -62,14 +62,14 @@ Feature requests, suggestions for improvements and bugs can be logged using the 
 
 This template's own documentation is spread across a few files, each with a distinct purpose:
 
-| File                                  | Purpose                                                                                          |
-|----------------------------------------|---------------------------------------------------------------------------------------------------|
-| [`README.md`](README.md)               | This file                                                                                          |
-| [`AGENTS.md`](AGENTS.md)               | The conventions template itself — the source of truth this file points to                         |
-| [`CLAUDE.md`](CLAUDE.md)               | Thin pointer to `AGENTS.md`                                                                        |
-| [`CHANGELOG.md`](CHANGELOG.md)         | Notable changes per release, in [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) format   |
-| [`HISTORY.md`](HISTORY.md)             | Narrative history of this template's own evolution                                                |
-| [`RELEASE_NOTES.md`](RELEASE_NOTES.md) | Detailed release notes for the current/latest version                                             |
+| File                                   | Purpose                                                                                         |
+|----------------------------------------|-------------------------------------------------------------------------------------------------|
+| [`README.md`](README.md)               | This file                                                                                       |
+| [`AGENTS.md`](AGENTS.md)               | The conventions template itself — the source of truth this file points to                       |
+| [`CLAUDE.md`](CLAUDE.md)               | Thin pointer to `AGENTS.md`                                                                     |
+| [`CHANGELOG.md`](CHANGELOG.md)         | Notable changes per release, in [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) format |
+| [`HISTORY.md`](HISTORY.md)             | Narrative history of this template's own evolution                                              |
+| [`RELEASE_NOTES.md`](RELEASE_NOTES.md) | Detailed release notes for the current/latest version                                           |
 
 [`documentation/history/`](documentation/history) archives past releases' `RELEASE_NOTES_vX.Y.Z.md`/
 `PR_DESCRIPTION_vX.Y.Z.md` files, grouped into one subdirectory per major version (e.g.
