@@ -100,10 +100,10 @@ Steps (mirroring AGENTS.md's Release Checklist):
     Documentation rules).
 12. **Archive `RELEASE_NOTES.md`.** Once finalised, copy it byte-for-byte (no edits, no trimming) to
     `documentation/history/RELEASE_NOTES_v$VERSION.md` — or
-    `documentation/history/v<major>.<minor>/RELEASE_NOTES_v$VERSION.md` if this project has adopted the
-    per-minor-version subdirectory grouping from AGENTS.md's Documentation File Map (`<major>.<minor>` is
-    `$VERSION`'s leading `major.minor` pair, e.g. `7.2.0` → `v7.2`; create that `v<major>.<minor>/` folder first if
-    this is the first release of a new minor version).
+    `documentation/history/v<major>/RELEASE_NOTES_v$VERSION.md` if this project has adopted the per-major-version
+    subdirectory grouping from AGENTS.md's Documentation File Map (`<major>` is `$VERSION`'s leading number before
+    the first `.`, e.g. `7.2.0` → `v7`; create that `v<major>/` folder first if this is the first release of a new
+    major version).
 13. **Write `documentation/history/PR_DESCRIPTION_v$VERSION.md`** (same location as step 12 above), per AGENTS.md's
     Release Checklist structure for this file. *(fill in)* the actual build/lint/test commands for the Test Plan
     checklist. Additionally, end the file with the standard Claude Code attribution footer (a blank line, then

@@ -37,10 +37,10 @@ Read these fully before drafting anything — you cannot tell what's *new* witho
    top-level design doc, e.g. `UI.md`)* — the same sources `improvement-plan.md`'s own "🎯 Purpose & Scope" section
    says it draws from.
 4. `HISTORY.md`'s most recent "🚀 Future Roadmap Implications" entries, and the most recent
-   `documentation/history/RELEASE_NOTES_v*.md`'s (or, if this project groups that folder into per-minor-version
-   subdirectories per AGENTS.md's Documentation File Map, `documentation/history/v*.*/RELEASE_NOTES_v*.md`'s)
-   "Known Issues" and "Future Enhancements" sections — "most recent" means the highest semantic version found
-   across all locations searched, not simply the file inside the highest-numbered `v*.*/` folder.
+   `documentation/history/RELEASE_NOTES_v*.md`'s (or, if this project groups that folder into per-major-version
+   subdirectories per AGENTS.md's Documentation File Map, `documentation/history/v*/RELEASE_NOTES_v*.md`'s) "Known
+   Issues" and "Future Enhancements" sections — "most recent" means the highest semantic version found across all
+   locations searched, not simply the file inside the highest-numbered `v*/` folder.
 5. *(fill in)* The project's CI workflow files and manifest/config (e.g. `.github/workflows/`, plus the stack's
    dependency manifest and key config files — `package.json`/`vite.config.ts`/`tsconfig.*`/`eslint.config.js` for a
    JS/TS project, or `pom.xml`/`application*.properties` for a Java/Spring project) — config that a doc's claims

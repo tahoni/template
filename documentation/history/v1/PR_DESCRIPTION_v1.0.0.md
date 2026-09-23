@@ -29,7 +29,7 @@
 
 ## 🔗 Related Documentation
 
-- [RELEASE_NOTES.md](/documentation/history/v1.0/RELEASE_NOTES_v1.0.0.md)
+- [RELEASE_NOTES.md](/documentation/history/v1/RELEASE_NOTES_v1.0.0.md)
 - [CHANGELOG.md](/CHANGELOG.md)
 - [HISTORY.md](/HISTORY.md)
 

@@ -348,11 +348,10 @@ These documentation-only folders supplement it:
   | `PR_DESCRIPTION_vX.Y.Z.md` | The release pull request's body, archived for that version |
 
   *(fill in, if applicable)* Once this folder accumulates enough releases to make browsing it unwieldy, group its
-  files into `v<major>.<minor>/` subdirectories by minor version (e.g.
-  `documentation/history/v8.6/RELEASE_NOTES_v8.6.0.md`, covering every `v8.6.x` patch release), creating a new
-  `v<major>.<minor>/` folder the first time a release starts a new minor version — see the Release Checklist below.
-  Similarly, if `HISTORY.md`'s own narrative grows too large, a phase-by-phase section of it can be split out into a
-  standing companion file living directly in `documentation/history/` (not per-version), e.g.
+  files into `v<major>/` subdirectories by major version (e.g. `documentation/history/v8/RELEASE_NOTES_v8.6.0.md`),
+  creating a new `v<major>/` folder the first time a release starts a new major version — see the Release Checklist
+  below. Similarly, if `HISTORY.md`'s own narrative grows too large, a phase-by-phase section of it can be split out
+  into a standing companion file living directly in `documentation/history/` (not per-version), e.g.
   `documentation/history/EVOLUTION_OVERVIEW.md`.
 
 - **`documentation/roadmap/`** holds in-progress planning documents that sit outside the standard documentation set
@@ -568,11 +567,10 @@ before anything downstream references them:
     actual repository structure and correct any directory that's missing, renamed or gone stale, including tracked
     tooling directories (`.claude/`, `.github/`).
 11. **Archive `RELEASE_NOTES.md`.** Once finalised, copy it byte-for-byte (no edits, no trimming) to
-    `documentation/history/RELEASE_NOTES_vX.Y.Z.md` — or
-    `documentation/history/v<major>.<minor>/RELEASE_NOTES_vX.Y.Z.md` if this project has adopted the
-    per-minor-version subdirectory grouping described in the Documentation File Map above (`<major>.<minor>` is
-    `X.Y.Z`'s leading `major.minor` pair, e.g. `7.2.0` → `v7.2`; create that `v<major>.<minor>/` folder first if this
-    is the first release of a new minor version).
+    `documentation/history/RELEASE_NOTES_vX.Y.Z.md` — or `documentation/history/v<major>/RELEASE_NOTES_vX.Y.Z.md` if
+    this project has adopted the per-major-version subdirectory grouping described in the Documentation File Map
+    above (`<major>` is the leading number of `X.Y.Z` before the first `.`, e.g. `7.2.0` → `v7`; create that
+    `v<major>/` folder first if this is the first release of a new major version).
 12. **Write `documentation/history/PR_DESCRIPTION_vX.Y.Z.md`** (same location as step 11 above). The body text for
     the release pull request. Keep it small — a PR body, not a second `RELEASE_NOTES.md`: a few bullets per section,
     high-level only. Structure:
