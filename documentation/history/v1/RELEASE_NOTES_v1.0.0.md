@@ -138,6 +138,6 @@ stack-agnostic lives in `AGENTS.md`, ready to be filled in for a specific projec
 
 ---
 
-**For detailed change history, see [CHANGELOG.md](/CHANGELOG.md)**
+**For detailed change history, see [CHANGELOG.md](/documentation/current/CHANGELOG.md)**
 
 **For previous releases, see the [history folder](/documentation/history)**

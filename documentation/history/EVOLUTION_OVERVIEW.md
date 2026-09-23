@@ -1,8 +1,8 @@
 # Template Evolution Overview
 
 `HISTORY.md`'s companion — the full Phase-by-phase narrative behind this template's evolution, split out here to
-keep `HISTORY.md` a manageable size. See [`HISTORY.md`](/HISTORY.md) for the Historical Timeline, Key Learnings,
-Future Roadmap Implications and Conclusion.
+keep `HISTORY.md` a manageable size. See [`HISTORY.md`](/documentation/current/HISTORY.md) for the Historical
+Timeline, Key Learnings, Future Roadmap Implications and Conclusion.
 
 ---
 
@@ -43,4 +43,4 @@ disruptive one-off reorganisation later. `AGENTS.md`'s Documentation File Map, R
 ---
 
 **For the Historical Timeline, Key Learnings, Future Roadmap Implications and Conclusion, see
-[HISTORY.md](/HISTORY.md)**
+[HISTORY.md](/documentation/current/HISTORY.md)**

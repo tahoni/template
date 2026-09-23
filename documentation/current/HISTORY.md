@@ -95,6 +95,6 @@ leaving out what's project-specific — is the core discipline this history is m
 
 ---
 
-**For the current release, see [RELEASE_NOTES.md](/RELEASE_NOTES.md)**
+**For the current release, see [RELEASE_NOTES.md](RELEASE_NOTES.md)**
 
-**For the full change log, see [CHANGELOG.md](/CHANGELOG.md)**
+**For the full change log, see [CHANGELOG.md](CHANGELOG.md)**

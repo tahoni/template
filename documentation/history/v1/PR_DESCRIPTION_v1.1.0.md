@@ -27,7 +27,7 @@
 ## 🔗 Related Documentation
 
 - [RELEASE_NOTES.md](/documentation/history/v1/RELEASE_NOTES_v1.1.0.md)
-- [CHANGELOG.md](/CHANGELOG.md)
-- [HISTORY.md](/HISTORY.md)
+- [CHANGELOG.md](/documentation/current/CHANGELOG.md)
+- [HISTORY.md](/documentation/current/HISTORY.md)
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

@@ -65,17 +65,20 @@ This template's own documentation is spread across a few files, each with a dist
 | File                                   | Purpose                                                                                         |
 |----------------------------------------|-------------------------------------------------------------------------------------------------|
 | [`README.md`](README.md)               | This file                                                                                       |
-| [`AGENTS.md`](AGENTS.md)               | The conventions template itself — the source of truth this file points to                       |
-| [`CLAUDE.md`](CLAUDE.md)               | Thin pointer to `AGENTS.md`                                                                     |
+| [`AGENTS.md`](/AGENTS.md)              | The conventions template itself — the source of truth this file points to                       |
+| [`CLAUDE.md`](/CLAUDE.md)              | Thin pointer to `AGENTS.md`                                                                     |
 | [`CHANGELOG.md`](CHANGELOG.md)         | Notable changes per release, in [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) format |
 | [`HISTORY.md`](HISTORY.md)             | Narrative history of this template's own evolution                                              |
 | [`RELEASE_NOTES.md`](RELEASE_NOTES.md) | Detailed release notes for the current/latest version                                           |
 
-[`documentation/history/`](documentation/history) archives past releases' `RELEASE_NOTES_vX.Y.Z.md`/
+All four of these files (this one included) live in `documentation/current/`, not the repository root — see
+`AGENTS.md`'s Documentation File Map for why.
+
+[`documentation/history/`](/documentation/history) archives past releases' `RELEASE_NOTES_vX.Y.Z.md`/
 `PR_DESCRIPTION_vX.Y.Z.md` files, grouped into one subdirectory per major version (e.g.
 `documentation/history/v1/`), so past releases stay individually referenceable once `RELEASE_NOTES.md` moves on to
 the next version, plus one standing exception —
-[`EVOLUTION_OVERVIEW.md`](documentation/history/EVOLUTION_OVERVIEW.md), `HISTORY.md`'s companion holding the full
+[`EVOLUTION_OVERVIEW.md`](/documentation/history/EVOLUTION_OVERVIEW.md), `HISTORY.md`'s companion holding the full
 Phase-by-phase narrative, split out to keep `HISTORY.md` a manageable size.
 
 `ARCHITECTURE.md`, `CONTRIBUTING.md` and `LICENSE.md` — named in `AGENTS.md`'s own Documentation File Map — don't

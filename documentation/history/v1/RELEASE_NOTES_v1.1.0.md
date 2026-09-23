@@ -129,6 +129,6 @@ without imposing new structure on projects that don't need it yet.
 
 ---
 
-**For detailed change history, see [CHANGELOG.md](/CHANGELOG.md)**
+**For detailed change history, see [CHANGELOG.md](/documentation/current/CHANGELOG.md)**
 
 **For previous releases, see the [history folder](/documentation/history)**
