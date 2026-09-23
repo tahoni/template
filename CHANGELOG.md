@@ -19,6 +19,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### 🧪 [Unreleased]
 
+#### ➕ Added
+
+##### Documentation
+
+- `README.md`: project overview, repository/issues links, a "What's Inside" table of this template's files, a
+  Getting Started walkthrough for scaffolding a new project from it, a Documentation table and an Author section
+
+#### 🔄 Changed
+
+##### Documentation
+
+- `documentation/history/` regrouped from a flat directory into `v<major>/` subdirectories by major version (e.g.
+  `documentation/history/v1/`), then reverted from an intermediate per-minor-version (`v<major>.<minor>/`) grouping
+  back to per-major-version, with `AGENTS.md` and the `generate-pr-summary`/`prep-version-release`/
+  `update-improvement-plan-gaps` skills updated to match each time
+
 ### 🧾 [1.1.0] - 2026-09-23
 
 #### 🔄 Changed
