@@ -142,10 +142,10 @@ individual files or classes inside (see [📁 Directory Tree Maintenance](#-dire
 - **Static analysis / security scanning** (e.g. CodeQL): what it runs on and how often.
 - **Linting**: which config, and whether it must report zero warnings (not just zero errors).
 - **Build workflow**: which commands run on push/PR (lint, build, test) and what branches/gates it protects.
-- **Dependency audit**: how often dependencies are reviewed (`npm outdated`/`npm audit`, `mvn versions:display-dependency-updates`,
-  etc.), whether it's advisory-only or blocking, and which dependencies sit on a security-sensitive boundary
-  (user-submitted content, auth, bot protection) and deserve extra scrutiny — read the changelog before upgrading
-  those, not just accepting an automatic bump.
+- **Dependency audit**: how often dependencies are reviewed (`npm outdated`/`npm audit`,
+  `mvn versions:display-dependency-updates`, etc.), whether it's advisory-only or blocking, and which dependencies
+  sit on a security-sensitive boundary (user-submitted content, auth, bot protection) and deserve extra scrutiny —
+  read the changelog before upgrading those, not just accepting an automatic bump.
 
 ---
 
