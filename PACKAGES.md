@@ -30,7 +30,7 @@ Supporting these developers helps ensure the sustainability and continued improv
 ## 💰 Packages looking for funding
 
 *(fill in)* The full funding tree for every dependency that has a `funding` field, generated rather than
-hand-written — e.g. via `{{package manager}} fund` for an npm-based project — pasted verbatim into a fenced code
+handwritten — e.g. via `{{package manager}} fund` for an npm-based project — pasted verbatim into a fenced code
 block below, headed by the project's own `name@version`:
 
 ```
