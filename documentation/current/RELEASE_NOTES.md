@@ -1,95 +1,120 @@
-# Release Notes – Version 1.1.0
+# Release Notes – Version 1.2.0
 
-**Release Date:** September 23, 2026 **Status:** ✨ Stable
+**Release Date:** September 24, 2026 **Status:** ✨ Stable
 
 ---
 
 ## 🎯 Theme
 
-**Sync Optional documentation/history/vN/ Layout & Layered Test Conventions from hpsc-web-springboot**
+**Fill-In Template Scaffolds for the Full Documentation Set**
 
-Version 1.1.0 is a documentation-only minor release. It pulls two conventions forward from the sibling
-`hpsc-web-springboot` project, which had evolved past the point this template was last combined from it: the
-optional per-major-version `documentation/history/v<major>/` subdirectory grouping (with a companion
-`EVOLUTION_OVERVIEW.md` split for an oversized `HISTORY.md`), and a formal three-tier layered test architecture for
-interface-based backends. Three skills that reference the archive path are updated to match, and a handful of
-serial-comma violations are corrected along the way.
+Version 1.2.0 is a documentation-only minor release. Until now, this template shipped only `AGENTS.md`, `CLAUDE.md`
+and its Claude Code skills. The rest of the documentation set that `AGENTS.md`'s Documentation File Map describes
+(`README.md`, `ARCHITECTURE.md`, `CONTRIBUTING.md`, `HISTORY.md`, `CHANGELOG.md`, `RELEASE_NOTES.md` and
+`LICENSE.md`) was left for each new project to write from scratch. This release adds a fill-in-template scaffold for
+every one of those files, plus optional `UI.md`, `PACKAGES.md` and `HELP.md` scaffolds for stack-specific docs. To make
+room for them at the repository root, the template's own `README.md`, `CHANGELOG.md`, `HISTORY.md` and
+`RELEASE_NOTES.md` move into `documentation/current/`. The template also gets its own release history for the first
+time, backfilled for v1.0.0 and v1.1.0. `HISTORY.md`'s Evolution Overview is now always split out into
+`documentation/history/EVOLUTION_OVERVIEW.md`.
 
 ---
 
 ## ⭐ Key Highlights
 
-### 🗂️ Optional documentation/history/vN/ Layout
+### 📜 Fill-In Template Scaffolds
 
-- `AGENTS.md`'s Documentation File Map now documents an optional `v<major>/` subdirectory grouping for
-  `documentation/history/` (e.g. `documentation/history/v8/RELEASE_NOTES_v8.6.0.md`), to adopt once a project's
-  release archive grows large enough to make browsing it unwieldy — plus a companion pattern of splitting an
-  oversized `HISTORY.md`'s narrative into a standing `documentation/history/EVOLUTION_OVERVIEW.md` file
-- The Release Checklist's archive/PR-description steps, and the `generate-pr-summary`, `prep-version-release` and
-  `update-improvement-plan-gaps` skills, all updated to read/write that optional path alongside the existing flat
-  one
+- `README.md`, `ARCHITECTURE.md`, `CONTRIBUTING.md`, `HISTORY.md`, `CHANGELOG.md` and `RELEASE_NOTES.md` scaffolds at
+  the repository root, each marking its sections *(reusable as-is)* or *(fill in)* the same way `AGENTS.md` does,
+  with `{{placeholder}}` tokens for project-specific values
+- `LICENSE.md` scaffold: MIT licence text with `{{year}}`/`{{copyright holder}}` placeholders, to swap for a
+  different licence entirely where the project uses one
+- Optional `UI.md` (from `hpsc-web-vite`), `PACKAGES.md` (from `hpsc-web-vite`) and `HELP.md` (from
+  `hpsc-web-springboot`) scaffolds for the stack-specific docs the Documentation File Map already named, each to be
+  deleted rather than filled in where it doesn't apply
 
-### 🧪 Layered Test Architecture
+### 🗺️ Template's Own Docs Move to documentation/current/
 
-- `AGENTS.md`'s Test Conventions section formalises an optional three-tier layered test architecture for a
-  layered, interface-based backend: a unit test of the interface's own public contract (fully mocked), a separate
-  unit test for implementation-only helper methods (also fully mocked) and a no-mock integration test of the same
-  public contract through the real, framework-wired implementation — previously only implicit in the
-  `scaffold-unit-tests`/`scaffold-integration-tests` skills
+- The template's own `README.md`, `CHANGELOG.md`, `HISTORY.md` and `RELEASE_NOTES.md` now live in
+  `documentation/current/`, so the root-level names belong to the scaffolds a new project copies
+- The template's own release history is backfilled for v1.0.0 and v1.1.0, with archives grouped into
+  `documentation/history/v1/`
+
+### 📖 Evolution Overview Always Split Out
+
+- `HISTORY.md`'s "📖 Evolution Overview" section is now always a short pointer to
+  `documentation/history/EVOLUTION_OVERVIEW.md`, from a project's very first release onward. Before, the split was an
+  optional step for once `HISTORY.md` grew too large. `AGENTS.md`'s Documentation File Map and Release Checklist, and
+  the `prep-version-release` skill, now say to write every new Phase entry there
 
 ---
 
 ## 📦 What's New
 
+### Added
+
+#### Documentation
+
+- `README.md`: project overview, repository/issues links, a "What's Inside" table of this template's files, a
+  Getting Started walkthrough for scaffolding a new project from it, a Documentation table and an Author section
+- `CHANGELOG.md`, `HISTORY.md`, `RELEASE_NOTES.md` and `documentation/history/v1/`: this template's own release
+  documentation, backfilled for v1.0.0 and v1.1.0 from the existing commit history and `v1.0.0`/`v1.1.0` tags
+- `README.md`, `ARCHITECTURE.md`, `CONTRIBUTING.md`, `HISTORY.md`, `CHANGELOG.md`, `RELEASE_NOTES.md`:
+  fill-in-template scaffolds at the repository root for a scaffolded project's own copies of these files
+- `LICENSE.md`: fill-in-template MIT licence with `{{year}}`/`{{copyright holder}}` placeholders
+- `UI.md`, `PACKAGES.md` and `HELP.md`: optional fill-in-template scaffolds for stack-specific docs
+
 ### Changed
 
 #### Documentation
 
-- `AGENTS.md`: Documentation File Map describes the optional `documentation/history/v<major>/` subdirectory
-  grouping and the companion `EVOLUTION_OVERVIEW.md` split for `HISTORY.md`
-- `AGENTS.md`: Release Checklist's archive-`RELEASE_NOTES.md`/write-PR-description steps reference the same
-  optional `v<major>/` location
-- `AGENTS.md`: Test Conventions section formalises the optional three-tier layered test architecture
-  (interface-contract test, impl-only-helper test, no-mock integration test)
-- Fixed serial-comma violations in `AGENTS.md` and `.claude/skills/scaffold-integration-tests/SKILL.md` — a
-  handful of three-item lists carried a comma before the final `and`/`or`, contradicting `AGENTS.md`'s own Serial
-  Commas convention
-
-#### Tooling
-
-- `.claude/skills/generate-pr-summary`, `.claude/skills/prep-version-release`,
-  `.claude/skills/update-improvement-plan-gaps`: updated to read/write archived release docs at the optional
-  `documentation/history/v<major>/...` path alongside the existing flat one
+- This template's own release archive grouped into `documentation/history/v1/`, adopting `AGENTS.md`'s optional
+  per-major-version layout from its first releases
+- `HISTORY.md`'s "📖 Evolution Overview" section is now always split out into
+  `documentation/history/EVOLUTION_OVERVIEW.md`, with `AGENTS.md` and the `prep-version-release` skill updated to
+  match
+- `README.md`, `CHANGELOG.md`, `HISTORY.md` and `RELEASE_NOTES.md`: this template's own copies moved from the
+  repository root into `documentation/current/`
 
 ---
 
 ## 🚀 Migration Guide
 
-No code, schema or dependency changes in this release. The `documentation/history/v<major>/` grouping is opt-in —
-nothing changes for a project that keeps the flat layout.
+No code, schema or dependency changes in this release. For a project already scaffolded from an earlier version:
+
+- Optionally, compare the project's own `README.md`/`ARCHITECTURE.md`/`CONTRIBUTING.md`/`HISTORY.md`/`CHANGELOG.md`/
+  `RELEASE_NOTES.md`/`LICENSE.md` against the new root-level scaffolds and pull forward any sections worth adopting.
+- If the project's `HISTORY.md` still holds its Evolution Overview narrative inline, move it to
+  `documentation/history/EVOLUTION_OVERVIEW.md` and leave a short pointer under the same heading/anchor, per the
+  updated Documentation File Map.
+- Don't copy `documentation/current/`. It holds this template repository's own docs, not scaffolds.
 
 ---
 
 ## 📊 Statistics
 
-- **Total Commits:** 2
-- **Files Changed:** 5
-- **Insertions:** 51 lines
-- **Deletions:** 18 lines
-- **Net Change:** +33 lines
+- **Total Commits:** 14
+- **Files Changed:** 21
+- **Insertions:** 1,658 lines
+- **Deletions:** 22 lines
+- **Net Change:** +1,636 lines
 
 ---
 
 ## 🧭 Design Notes
 
-- **Document the layout as optional, not mandatory.** A brand-new project scaffolded from this template starts with
-  a handful of releases at most — grouping `documentation/history/` into `v<major>/` subdirectories from day one
-  would add structure the project doesn't need yet, so the convention is framed as a scaling step to adopt once the
-  folder gets unwieldy, matching how `hpsc-web-springboot` itself only adopted it after accumulating eight major
-  versions.
-- **Keep every consumer of a path in sync in the same change.** The three skills that read or write
-  `documentation/history/...` paths were updated in the same release as the `AGENTS.md` convention they implement,
-  rather than left to drift.
+- **Scaffold every file the Documentation File Map names.** `AGENTS.md` already told a new project which docs to
+  keep, but a new project still had to write each one from nothing. Shipping a scaffold for each of them turns the
+  map from a description into a starting point.
+- **Separate the template's own docs from the scaffolds.** A template repository needs real docs of its own and also
+  root-level scaffolds with the same filenames. Moving the template's own copies into `documentation/current/` lets
+  a new project copy the root as-is, without mixing up the two.
+- **Delete optional scaffolds rather than leaving them unfilled.** `UI.md`, `PACKAGES.md` and `HELP.md` each apply
+  to only some stacks. Each one says so in its own template note, so an unfilled copy doesn't linger in a project
+  where it doesn't fit.
+- **Split the Evolution Overview out by construction.** `hpsc-web-springboot` only split its Evolution Overview out
+  once it had grown to roughly half of `HISTORY.md`. Splitting it out from the first release means that one-off
+  reorganisation is never needed.
 
 ---
 
@@ -97,22 +122,27 @@ nothing changes for a project that keeps the flat layout.
 
 - No automated test suite — this is a documentation-only template.
 - Manual line-wrap check (100–120 characters, tables/code blocks exempt) across every changed file.
+- Manual review confirming every root-level scaffold's *(fill in)*/*(reusable as-is)* markers and the
+  `documentation/current/` link paths resolve.
 
 ---
 
 ## 🐛 Known Issues
 
-- `README.md`, `ARCHITECTURE.md`, `CONTRIBUTING.md` and `LICENSE.md` still don't exist in this template (carried
-  over from v1.0.0).
-- No `documentation/roadmap/improvement-plan.md`/`improvement-plan-tasks.md` exists yet (carried over from v1.0.0).
+- No `documentation/roadmap/improvement-plan.md`/`improvement-plan-tasks.md` exists yet for this template (carried
+  over from v1.0.0), so the `update-improvement-plan-gaps`/`sync-improvement-plan-gaps` skills have nothing to audit.
+- The template repository still has no `ARCHITECTURE.md`, `CONTRIBUTING.md` or `LICENSE.md` of its own. The
+  root-level files with those names are scaffolds for scaffolded projects.
+- The `documentation/history/v1/` archives for v1.0.0 and v1.1.0 had their internal links updated for the
+  `documentation/current/` move, so they are no longer byte-for-byte copies of the release notes as first written.
 
 ---
 
 ## 🔮 Future Enhancements
 
-- Keep syncing genuinely reusable conventions back from `hpsc-web-vite`/`hpsc-web-springboot` as they evolve.
-- Fill in the *(fill in)* scaffolding in `AGENTS.md` and each skill once this template is used to scaffold an
-  actual project.
+- Keep syncing genuinely reusable conventions and scaffolds back from `hpsc-web-vite`/`hpsc-web-springboot` as they
+  evolve.
+- Add a `documentation/roadmap/` improvement plan for the template itself.
 
 ---
 
@@ -124,11 +154,11 @@ Leoni Lubbinge
 
 ## 📝 Notes
 
-Version 1.1.0 keeps this template's conventions current with the sibling projects it was originally combined from,
-without imposing new structure on projects that don't need it yet.
+Version 1.2.0 turns this template from a conventions file with automation into a complete documentation kit. A new
+project now gets a starting point for every file `AGENTS.md` asks it to maintain.
 
 ---
 
-**For detailed change history, see [CHANGELOG.md](CHANGELOG.md)**
+**For detailed change history, see [CHANGELOG.md](/documentation/current/CHANGELOG.md)**
 
 **For previous releases, see the [history folder](/documentation/history)**

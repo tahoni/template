@@ -12,12 +12,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Table of Contents
 
 - [🧪 Unreleased](#-unreleased)
-- [🧾 Version 1.1.0](#-110---2026-09-23) ← Current
+- [🧾 Version 1.2.0](#-120---2026-09-24) ← Current
+- [🧾 Version 1.1.0](#-110---2026-09-23)
 - [🧾 Version 1.0.0](#-100---2026-09-22)
 
 ---
 
 ### 🧪 [Unreleased]
+
+### 🧾 [1.2.0] - 2026-09-24
 
 #### ➕ Added
 
@@ -25,20 +28,33 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - `README.md`: project overview, repository/issues links, a "What's Inside" table of this template's files, a
   Getting Started walkthrough for scaffolding a new project from it, a Documentation table and an Author section
+- `CHANGELOG.md`, `HISTORY.md`, `RELEASE_NOTES.md` and `documentation/history/v1/`: this template's own release
+  documentation, backfilled for v1.0.0 and v1.1.0 from the existing commit history and `v1.0.0`/`v1.1.0` tags
+- `README.md`, `ARCHITECTURE.md`, `CONTRIBUTING.md`, `HISTORY.md`, `CHANGELOG.md`, `RELEASE_NOTES.md`:
+  fill-in-template scaffolds at the repository root for a scaffolded project's own copies of these files, each
+  marking its sections *(reusable as-is)* or *(fill in)* and using `{{placeholder}}` tokens for project-specific
+  values, per `AGENTS.md`'s Documentation File Map
+- `LICENSE.md`: fill-in-template MIT licence with `{{year}}`/`{{copyright holder}}` placeholders, to swap for a
+  different licence entirely where the project uses one
+- `UI.md` (based on `hpsc-web-vite`'s own), `PACKAGES.md` (based on `hpsc-web-vite`'s own) and `HELP.md` (based on
+  `hpsc-web-springboot`'s own): optional fill-in-template scaffolds for the stack-specific docs `AGENTS.md`'s
+  Documentation File Map already names — each to be deleted rather than filled in where it doesn't apply
 
 #### 🔄 Changed
 
 ##### Documentation
 
-- `documentation/history/` regrouped from a flat directory into `v<major>/` subdirectories by major version (e.g.
-  `documentation/history/v1/`), then reverted from an intermediate per-minor-version (`v<major>.<minor>/`) grouping
-  back to per-major-version, with `AGENTS.md` and the `generate-pr-summary`/`prep-version-release`/
-  `update-improvement-plan-gaps` skills updated to match each time
+- This template's own release archive grouped into `documentation/history/v1/`, adopting `AGENTS.md`'s optional
+  per-major-version layout from its first releases
 - `HISTORY.md`'s "📖 Evolution Overview" section split out into new `documentation/history/EVOLUTION_OVERVIEW.md`
   — previously an optional step for once `HISTORY.md` grew too large, now always split out from the first release
   onward. `HISTORY.md` keeps a short pointer under the same heading/anchor, so its Table of Contents entry still
   resolves; `AGENTS.md`'s Documentation File Map and Release Checklist, and the `prep-version-release` skill's
   "Extend `HISTORY.md`" step, updated to match
+- `README.md`, `CHANGELOG.md`, `HISTORY.md` and `RELEASE_NOTES.md`: this template's own copies moved from the
+  repository root into `documentation/current/`, freeing the root names for the fill-in-template scaffolds a new
+  project copies; internal links in `EVOLUTION_OVERVIEW.md` and the `documentation/history/v1/` archives updated to
+  the new paths
 
 ### 🧾 [1.1.0] - 2026-09-23
 

@@ -17,6 +17,23 @@ how its `AGENTS.md` conventions and Claude Code skills have grown over time.
 
 ## 📅 Historical Timeline
 
+### Version 1.2.0 (September 24, 2026)
+
+**Theme:** Fill-In Template Scaffolds for the Full Documentation Set
+
+**Key Focus:**
+
+- Fill-in-template scaffolds added at the repository root for every file `AGENTS.md`'s Documentation File Map
+  names: `README.md`, `ARCHITECTURE.md`, `CONTRIBUTING.md`, `HISTORY.md`, `CHANGELOG.md`, `RELEASE_NOTES.md` and
+  an MIT `LICENSE.md` with placeholders
+- Optional `UI.md` and `PACKAGES.md` (from `hpsc-web-vite`) and `HELP.md` (from `hpsc-web-springboot`) scaffolds
+  added for stack-specific docs, each to be deleted rather than filled in where it doesn't apply
+- This template's own `README.md`, `CHANGELOG.md`, `HISTORY.md` and `RELEASE_NOTES.md` moved into
+  `documentation/current/` to free the root names for the scaffolds. Its release history was backfilled for v1.0.0
+  and v1.1.0, with archives grouped into `documentation/history/v1/`
+- `HISTORY.md`'s Evolution Overview is now always split out into `documentation/history/EVOLUTION_OVERVIEW.md`
+  from the first release onward, with `AGENTS.md` and the `prep-version-release` skill updated to match
+
 ### Version 1.1.0 (September 23, 2026)
 
 **Theme:** Sync Optional documentation/history/vN/ Layout & Layered Test Conventions from hpsc-web-springboot
@@ -73,6 +90,12 @@ this file a manageable size.
 - **A skill that restates a convention instead of pointing at it will eventually contradict it.** Every skill in
   this template treats `AGENTS.md` as the single source of truth it defers to, a discipline established in v1.0.0
   and reinforced by v1.1.0's own skill updates.
+- **A template's own docs and its scaffolds need separate homes.** Once the template shipped root-level scaffolds
+  with the same filenames as its own real docs, v1.2.0 moved the real ones into `documentation/current/`. That way
+  a new project can copy the root as-is without inheriting the template's own history.
+- **Make a scaling step the default when it costs nothing up front.** Splitting the Evolution Overview out of
+  `HISTORY.md` from the first release, rather than once it grows large, removes a disruptive reorganisation later.
+  An empty pointer section costs a new project almost nothing.
 
 ---
 
@@ -80,16 +103,20 @@ this file a manageable size.
 
 - Continue periodically diffing `hpsc-web-vite`/`hpsc-web-springboot`'s own `AGENTS.md`/skill history against this
   template's last sync point, pulling forward genuinely reusable conventions.
-- Once this template is actually used to scaffold a project, fill in its *(fill in)* scaffolding and add the
-  `README.md`/`ARCHITECTURE.md`/`CONTRIBUTING.md`/`LICENSE.md` files its own Documentation File Map already
-  describes.
+- With a scaffold now shipped for every file in the Documentation File Map, check each new convention pulled
+  forward from the sibling projects against both `AGENTS.md` and the matching root-level scaffold, so the two don't
+  drift apart.
+- Add a `documentation/roadmap/` improvement plan for the template itself, so the
+  `update-improvement-plan-gaps`/`sync-improvement-plan-gaps` skills have something to audit during its own
+  releases.
 
 ---
 
 ## 🎓 Conclusion
 
-Two releases in, this template's shape is already clear: a single `AGENTS.md` as the source of truth, a thin
-`CLAUDE.md` pointer and a set of Claude Code skills that automate its conventions without ever restating them.
+Three releases in, this template's shape is clear: a single `AGENTS.md` as the source of truth, a thin `CLAUDE.md`
+pointer, a set of Claude Code skills that automate its conventions without ever restating them and, since v1.2.0, a
+fill-in-template scaffold for every documentation file those conventions ask a project to maintain.
 Keeping it synced with the sibling projects it was combined from — pulling forward what's genuinely reusable,
 leaving out what's project-specific — is the core discipline this history is meant to keep visible.
 
