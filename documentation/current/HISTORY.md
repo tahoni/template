@@ -10,7 +10,7 @@ how its `AGENTS.md` conventions and Claude Code skills have grown over time.
 - [📅 Historical Timeline](#-historical-timeline)
 - [📖 Evolution Overview](#-evolution-overview)
 - [📚 Key Learnings](#-key-learnings)
-- [🗺️ Future Roadmap Implications](#-future-roadmap-implications)
+- [🛤️ Future Roadmap Implications](#-future-roadmap-implications)
 - [🎓 Conclusion](#-conclusion)
 
 ---
@@ -99,7 +99,7 @@ this file a manageable size.
 
 ---
 
-## 🗺️ Future Roadmap Implications
+## 🛤️ Future Roadmap Implications
 
 - Continue periodically diffing `hpsc-web-vite`/`hpsc-web-springboot`'s own `AGENTS.md`/skill history against this
   template's last sync point, pulling forward genuinely reusable conventions.

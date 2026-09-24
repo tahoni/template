@@ -30,6 +30,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   `sync-improvement-plan-gaps` skills expect (`🛤️ Roadmap`, `☑️ Success Criteria`); `README.md`'s What's Inside table
   and Getting Started steps updated to include them
 
+#### 🔄 Changed
+
+##### Documentation
+
+- Roadmap headings standardised on `AGENTS.md`'s registered 🛤️ icon, replacing a mix of 🗺️ (reserved for the
+  documentation file map) and 🚀 (reserved for getting started): `HISTORY.md`'s Future Roadmap Implications section
+  (both the root scaffold and this template's own copy), `CONTRIBUTING.md`'s Roadmap section and the
+  `improvement-plan.md` scaffold's Roadmap section
+- `improvement-plan.md` scaffold's Success Criteria section switched from ✅ (reserved for completed roadmap gap
+  status) to `AGENTS.md`'s registered ☑️ Checklist icon, matching `hpsc-web-vite`'s own improvement plan
+
+##### Tooling
+
+- `.claude/skills/update-improvement-plan-gaps`, `.claude/skills/sync-improvement-plan-gaps`: references to the
+  improvement plan's Roadmap table and `HISTORY.md`'s Future Roadmap Implications section updated to the 🛤️ icon,
+  and to its Success Criteria list updated to the ☑️ icon
+- Fixed a serial-comma violation in both skills' "Goals & Constraints table, Roadmap table and Success Criteria
+  list" step, which carried a comma before the final `and`, contradicting `AGENTS.md`'s own Serial Commas convention
+
 ### 🧾 [1.2.0] - 2026-09-24
 
 #### ➕ Added

@@ -14,7 +14,7 @@ project's own details and delete these template notes once done.
 - [📅 Historical Timeline](#-historical-timeline)
 - [📖 Evolution Overview](#-evolution-overview)
 - [📚 Key Learnings](#-key-learnings)
-- [🗺️ Future Roadmap Implications](#-future-roadmap-implications)
+- [🛤️ Future Roadmap Implications](#-future-roadmap-implications)
 - [🎓 Conclusion](#-conclusion)
 
 *(fill in, if applicable)* A larger/longer-lived project may also want Major Milestones, Architectural Evolution,
@@ -54,7 +54,7 @@ convention that proved its worth, a design decision that had to be reversed and 
 
 ---
 
-## 🗺️ Future Roadmap Implications
+## 🛤️ Future Roadmap Implications
 
 *(fill in)* What the project's history implies about where it's headed next — cross-check against
 `documentation/roadmap/improvement-plan.md`'s Goals & Constraints table, which is partly synthesised from this

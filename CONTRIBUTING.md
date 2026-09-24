@@ -14,7 +14,7 @@ project's own details and delete these template notes once done.
 - [🏛️ Architecture at a Glance](#-architecture-at-a-glance)
 - [🧩 Claude Code Skills](#-claude-code-skills)
 - [✍️ Documentation Conventions](#-documentation-conventions)
-- [🗺️ Roadmap](#-roadmap)
+- [🛤️ Roadmap](#-roadmap)
 - [🔀 Git Workflow](#-git-workflow)
 - [🔬 CI/CD & Quality Gates](#-cicd--quality-gates)
 - [☑️ Pull Request Checklist](#-pull-request-checklist)
@@ -80,7 +80,7 @@ registry. *(reusable as-is)*
 
 ---
 
-## 🗺️ Roadmap
+## 🛤️ Roadmap
 
 `documentation/roadmap/improvement-plan.md` and `improvement-plan-tasks.md` track this project's active
 improvement backlog — check both before assuming a gap (missing tests, no CI, etc.) is unintentional; it may
