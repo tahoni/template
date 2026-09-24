@@ -46,7 +46,8 @@ Feature requests, suggestions for improvements and bugs can be logged using the 
 | `HELP.md`                                                                                                         | Optional template for framework-generated reference links (e.g. Spring Initializr) — replace with the actual generated file (or delete), per `AGENTS.md`'s Documentation File Map                                                                                                                               |
 | `.claude/skills/`                                                                                                 | Claude Code skills automating `AGENTS.md`'s conventions — see its 🧩 Claude Code Skills section for the full list                                                                                                                                                                                               |
 | `.gitignore`, `.aiignore`                                                                                         | Baseline ignore patterns                                                                                                                                                                                                                                                                                        |
-| `documentation/`                                                                                                  | This template repository's own documentation (`current/`) and release archive (`history/`) — not copied into a new project                                                                                                                                                                                      |
+| `documentation/roadmap/`                                                                                          | Fill-in-template scaffolds for `improvement-plan.md`/`improvement-plan-tasks.md`, per `AGENTS.md`'s Roadmap Planning section                                                                                                                                                                                    |
+| `documentation/current/`, `documentation/history/`                                                                | This template repository's own documentation and release archive — not copied into a new project                                                                                                                                                                                                                |
 
 ---
 
@@ -54,11 +55,12 @@ Feature requests, suggestions for improvements and bugs can be logged using the 
 
 1. Copy `AGENTS.md`, `CLAUDE.md`, `README.md`, `ARCHITECTURE.md`, `CONTRIBUTING.md`, `HISTORY.md`, `CHANGELOG.md`,
    `RELEASE_NOTES.md`, `LICENSE.md`, `.claude/skills/`, `.gitignore` and `.aiignore` into the new project's
-   repository root.
+   repository root, and `documentation/roadmap/` into the same path there.
 2. Work through `AGENTS.md` top to bottom, replacing every `*(fill in)*`/`*(fill in, if applicable)*` section with
    the project's own tech stack, commands, architecture and environment variables — sections marked
-   `*(reusable as-is)*` need no changes. Do the same for the other seven files above, choosing an actual licence
-   (or swapping in a different one entirely) for `LICENSE.md`.
+   `*(reusable as-is)*` need no changes. Do the same for the other files above, choosing an actual licence (or
+   swapping in a different one entirely) for `LICENSE.md` — fill in `documentation/roadmap/` last, since its
+   improvement plan is synthesised from the rest (the `update-improvement-plan-gaps` skill can do this sweep).
 3. Copy `UI.md`, `PACKAGES.md` and `HELP.md` too, but only where each applies — `UI.md` for a component-based
    frontend, `PACKAGES.md` for a package manager with equivalent funding-tree tooling, `HELP.md` for a stack with an
    equivalent scaffolding-tool-generated reference file — deleting whichever doesn't apply rather than leaving it

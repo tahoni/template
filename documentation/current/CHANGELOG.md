@@ -20,6 +20,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### 🧪 [Unreleased]
 
+#### ➕ Added
+
+##### Documentation
+
+- `documentation/roadmap/improvement-plan.md`, `documentation/roadmap/improvement-plan-tasks.md`: fill-in-template
+  scaffolds for a scaffolded project's improvement plan and task list, combining the formats of `hpsc-web-springboot`
+  and `hpsc-web-vite`'s own, with the section headings the `update-improvement-plan-gaps`/
+  `sync-improvement-plan-gaps` skills expect (`🛤️ Roadmap`, `☑️ Success Criteria`); `README.md`'s What's Inside table
+  and Getting Started steps updated to include them
+
 ### 🧾 [1.2.0] - 2026-09-24
 
 #### ➕ Added
