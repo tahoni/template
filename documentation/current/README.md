@@ -18,9 +18,10 @@ skills, ready to be filled in and dropped into any new software project.
 
 This repository isn't a runnable application — it's a **template**. It packages the framework-agnostic parts of two
 sibling projects' own conventions (`hpsc-web-vite`, a React/Vite frontend, and `hpsc-web-springboot`, a Spring Boot
-backend) into a single, reusable `AGENTS.md` conventions file, a thin `CLAUDE.md` pointer to it and eight Claude Code
-skills that turn its conventions into ready-to-invoke workflows. Copy this repository's contents into a new project
-and fill in its `*(fill in)*`-marked sections with that project's own tech stack, commands and structure.
+backend) into a single, reusable `AGENTS.md` conventions file, a thin `CLAUDE.md` pointer to it, a set of Claude Code
+skills that turn its conventions into ready-to-invoke workflows and fill-in-template scaffolds for the rest of the
+documentation set. Copy this repository's contents into a new project and fill in its `*(fill in)*`-marked sections
+with that project's own tech stack, commands and structure.
 
 ---
 
@@ -43,8 +44,9 @@ Feature requests, suggestions for improvements and bugs can be logged using the 
 | `UI.md`                                                                                                           | Optional fill-in-template scaffold for a component-based frontend project's UI/layout documentation — delete rather than fill in for a non-frontend project, per `AGENTS.md`'s Documentation File Map                                                                                                           |
 | `PACKAGES.md`                                                                                                     | Optional fill-in-template scaffold for a dependency/funding manifest (e.g. `npm fund` output) — delete rather than fill in for a project whose package manager has no equivalent tooling, per `AGENTS.md`'s Documentation File Map                                                                              |
 | `HELP.md`                                                                                                         | Optional template for framework-generated reference links (e.g. Spring Initializr) — replace with the actual generated file (or delete), per `AGENTS.md`'s Documentation File Map                                                                                                                               |
-| `.claude/skills/`                                                                                                 | Eight Claude Code skills automating `AGENTS.md`'s conventions — see its 🧩 Claude Code Skills section for the full list                                                                                                                                                                                         |
+| `.claude/skills/`                                                                                                 | Claude Code skills automating `AGENTS.md`'s conventions — see its 🧩 Claude Code Skills section for the full list                                                                                                                                                                                               |
 | `.gitignore`, `.aiignore`                                                                                         | Baseline ignore patterns                                                                                                                                                                                                                                                                                        |
+| `documentation/`                                                                                                  | This template repository's own documentation (`current/`) and release archive (`history/`) — not copied into a new project                                                                                                                                                                                      |
 
 ---
 
@@ -79,8 +81,9 @@ This template's own documentation is spread across a few files, each with a dist
 | [`HISTORY.md`](HISTORY.md)             | Narrative history of this template's own evolution                                              |
 | [`RELEASE_NOTES.md`](RELEASE_NOTES.md) | Detailed release notes for the current/latest version                                           |
 
-All four of these files (this one included) live in `documentation/current/`, not the repository root — see
-`AGENTS.md`'s Documentation File Map for why.
+All four of these files (this one included) live in `documentation/current/`, not the repository root. The root-level
+files with the same names are the fill-in-template scaffolds a new project copies, per the Getting Started steps
+above.
 
 [`documentation/history/`](/documentation/history) archives past releases' `RELEASE_NOTES_vX.Y.Z.md`/
 `PR_DESCRIPTION_vX.Y.Z.md` files, grouped into one subdirectory per major version (e.g.
