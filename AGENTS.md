@@ -19,7 +19,7 @@ project's own details and delete these template notes once done.
 - [🔧 Environment Variables](#-environment-variables)
 - [🏛️ Architecture](#-architecture)
 - [🔬 Code Quality & CI](#-code-quality--ci)
-- [📚 Documentation Conventions](#-documentation-conventions)
+- [✍️ Documentation Conventions](#-documentation-conventions)
 - [🗺️ Documentation File Map](#-documentation-file-map)
 - [🛤️ Roadmap Planning](#-roadmap-planning)
 - [🧩 Claude Code Skills](#-claude-code-skills)
@@ -149,7 +149,7 @@ individual files or classes inside (see [📁 Directory Tree Maintenance](#-dire
 
 ---
 
-## 📚 Documentation Conventions
+## ✍️ Documentation Conventions
 
 ### British English
 
@@ -233,8 +233,9 @@ genuinely new concept. Core icons this template already establishes, applicable 
 | 🛤️   | Roadmap                                             |
 | 📚   | Documentation / key learnings                       |
 | 🏛️   | Architecture                                        |
-| 🧪   | Testing                                             |
+| 🧪   | Testing / unreleased changes                        |
 | 🔀   | Git workflow                                        |
+| 🔃   | Data flow                                           |
 | 🚢   | Release process                                     |
 | 🌲   | Evergreen documentation                             |
 | 🔍   | Current state / inspection                          |

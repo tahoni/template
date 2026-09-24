@@ -12,12 +12,12 @@ project's own details and delete these template notes once done.
 - [⚙️ Technology Stack](#-technology-stack)
 - [📁 Project Structure](#-project-structure)
 - [🎯 System Overview](#-system-overview)
-- [🏗️ Core Architecture](#-core-architecture)
-- [🔄 Key Design Patterns](#-key-design-patterns)
-- [🔀 Data Flow](#-data-flow)
+- [🏛️ Core Architecture](#-core-architecture)
+- [🧭 Key Design Patterns](#-key-design-patterns)
+- [🔃 Data Flow](#-data-flow)
 - [✅ Quality Attributes](#-quality-attributes)
 - [🔬 CI/CD & Quality Gates](#-cicd--quality-gates)
-- [📚 Development Guidelines](#-development-guidelines)
+- [🛠️ Development Guidelines](#-development-guidelines)
 
 ---
 
@@ -58,7 +58,7 @@ individual layers/components — what problem it solves and how the pieces fit t
 
 ---
 
-## 🏗️ Core Architecture
+## 🏛️ Core Architecture
 
 *(fill in)* Expand on `AGENTS.md`'s Architecture section's flow diagram with a detailed, layer-by-layer (or
 component-by-component) breakdown — one `###` subsection per layer/component, each covering its responsibility,
@@ -68,14 +68,14 @@ frontend, this typically means Routing → Feature pages → Feature content →
 
 ---
 
-## 🔄 Key Design Patterns
+## 🧭 Key Design Patterns
 
 *(fill in, if applicable)* Notable design patterns used throughout the codebase and why (e.g. a Repository pattern,
 a Strategy pattern for pluggable behaviour, a Provider/Context pattern for shared frontend state).
 
 ---
 
-## 🔀 Data Flow
+## 🔃 Data Flow
 
 *(fill in)* One diagram per notable flow — the typical request/response path at minimum, plus any distinctive
 flow the project has (e.g. a bulk import, an async job, a client-side cache invalidation path):
@@ -104,7 +104,7 @@ dependency audit). *(reusable as-is)*
 
 ---
 
-## 📚 Development Guidelines
+## 🛠️ Development Guidelines
 
 See `AGENTS.md`'s Code Style, Test Conventions and Git Workflow sections for the conventions that apply when
 extending this architecture. *(reusable as-is)*

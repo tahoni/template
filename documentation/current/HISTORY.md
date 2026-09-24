@@ -35,8 +35,9 @@ how its `AGENTS.md` conventions and Claude Code skills have grown over time.
   and v1.1.0, with archives grouped into `documentation/history/v1/`
 - `HISTORY.md`'s Evolution Overview is now always split out into `documentation/history/EVOLUTION_OVERVIEW.md`
   from the first release onward, with `AGENTS.md` and the `prep-version-release` skill updated to match
-- Roadmap and Success Criteria headings aligned with `AGENTS.md`'s icon registry (🛤️, ☑️) across the scaffolds,
-  this template's own `HISTORY.md` and the two improvement-plan skills
+- Every live heading icon audited against `AGENTS.md`'s icon registry and realigned where it had drifted —
+  roadmap and Success Criteria headings (🛤️, ☑️), plus the `ARCHITECTURE.md` scaffold, `AGENTS.md`'s own
+  Documentation Conventions heading and the improvement-plan scaffold — with a new `🔃 Data flow` registry entry
 
 ### Version 1.1.0 (September 23, 2026)
 

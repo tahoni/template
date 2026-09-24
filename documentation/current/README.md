@@ -7,7 +7,7 @@ skills, ready to be filled in and dropped into any new software project.
 
 - [📖 Introduction](#-introduction)
 - [🔗 Repository](#-repository)
-- [🧩 What's Inside](#-whats-inside)
+- [📁 What's Inside](#-whats-inside)
 - [🚀 Getting Started](#-getting-started)
 - [📚 Documentation](#-documentation)
 - [👤 Author](#-author)
@@ -34,7 +34,7 @@ Feature requests, suggestions for improvements and bugs can be logged using the 
 
 ---
 
-## 🧩 What's Inside
+## 📁 What's Inside
 
 | Path                                                                                                              | Purpose                                                                                                                                                                                                                                                                                                         |
 |-------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

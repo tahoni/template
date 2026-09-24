@@ -19,8 +19,8 @@
   `documentation/history/v1/`.
 - `AGENTS.md` Documentation File Map/Release Checklist and the `prep-version-release` skill updated for the
   always-split `EVOLUTION_OVERVIEW.md`.
-- Roadmap and Success Criteria headings aligned with `AGENTS.md`'s icon registry (🛤️, ☑️) across the scaffolds
-  and the two improvement-plan skills.
+- Every live heading icon realigned with `AGENTS.md`'s icon registry (roadmap 🛤️, Success Criteria ☑️,
+  `ARCHITECTURE.md` scaffold, `AGENTS.md`'s own Documentation Conventions), plus a new `🔃 Data flow` registry entry.
 
 ## 🧪 Test Plan
 

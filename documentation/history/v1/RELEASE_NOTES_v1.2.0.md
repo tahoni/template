@@ -58,6 +58,11 @@ and v1.1.0. `HISTORY.md`'s Evolution Overview is now always split out into
   Roadmap) now use `AGENTS.md`'s registered 🛤️ icon instead of a mix of 🗺️ and 🚀, and `improvement-plan.md`'s
   Success Criteria uses ☑️ instead of ✅, which the registry reserves for completed gap status
 - The `update-improvement-plan-gaps`/`sync-improvement-plan-gaps` skills refer to those headings by the same icons
+- Every other live heading was audited against the registry too, realigning `AGENTS.md`'s own Documentation
+  Conventions heading (✍️), four `ARCHITECTURE.md` scaffold headings (🏛️, 🧭, 🔃, 🛠️), this template's own
+  `README.md` What's Inside (📁) and the improvement-plan scaffold's At a Glance (🌳) and Related Documentation (🔗)
+- The registry gains a `🔃 Data flow` entry, and its 🧪 entry now also covers the `### 🧪 [Unreleased]` CHANGELOG
+  heading
 
 ---
 
@@ -92,6 +97,10 @@ and v1.1.0. `HISTORY.md`'s Evolution Overview is now always split out into
 - Roadmap headings standardised on `AGENTS.md`'s registered 🛤️ icon, and `improvement-plan.md`'s Success Criteria
   on ☑️, across the `HISTORY.md`/`CONTRIBUTING.md` scaffolds, this template's own `HISTORY.md` and the
   `improvement-plan.md` scaffold
+- Remaining drifted headings realigned with the registry: `AGENTS.md`'s Documentation Conventions, the
+  `ARCHITECTURE.md` scaffold's Core Architecture/Key Design Patterns/Data Flow/Development Guidelines, `README.md`'s
+  What's Inside and the `improvement-plan.md` scaffold's At a Glance/Related Documentation
+- `AGENTS.md` icon registry: new `🔃 Data flow` entry; 🧪 widened to "Testing / unreleased changes"
 
 #### Tooling
 
@@ -112,7 +121,9 @@ No code, schema or dependency changes in this release. For a project already sca
 - Copy `documentation/roadmap/` too, and fill it in last, since its improvement plan is synthesised from the rest
   of the documentation set.
 - If the project's roadmap headings use 🗺️/🚀, or its Success Criteria heading uses ✅, switch them to 🛤️/☑️ and
-  update the two improvement-plan skills to match.
+  update the two improvement-plan skills to match. Likewise re-check any heading copied from the earlier
+  `ARCHITECTURE.md` scaffold (Core Architecture, Key Design Patterns, Data Flow, Development Guidelines) against the
+  updated registry.
 - Don't copy `documentation/current/`. It holds this template repository's own docs, not scaffolds.
 
 ---

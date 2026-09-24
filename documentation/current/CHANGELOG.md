@@ -66,6 +66,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   `improvement-plan.md` scaffold's Roadmap section
 - `improvement-plan.md` scaffold's Success Criteria section switched from ✅ (reserved for completed roadmap gap
   status) to `AGENTS.md`'s registered ☑️ Checklist icon, matching `hpsc-web-vite`'s own improvement plan
+- Remaining headings realigned with `AGENTS.md`'s icon registry: `AGENTS.md`'s Documentation Conventions (📚 → ✍️);
+  the `ARCHITECTURE.md` scaffold's Core Architecture (🏗️ → 🏛️), Key Design Patterns (🔄 → 🧭), Data Flow
+  (🔀 → 🔃) and Development Guidelines (📚 → 🛠️); this template's own `README.md` What's Inside (🧩 → 📁); and the
+  `improvement-plan.md` scaffold's At a Glance (📋 → 🌳) and Related Documentation (📚 → 🔗, matching the PR
+  description convention)
+- `AGENTS.md` icon registry: new `🔃 Data flow` core entry, and the 🧪 entry widened to "Testing / unreleased
+  changes" to cover the `### 🧪 [Unreleased]` CHANGELOG heading it was already used for
 
 ##### Tooling
 

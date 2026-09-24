@@ -17,7 +17,7 @@ the first full sweep for you once `AGENTS.md` and the rest of the documentation 
 - [🔍 Gaps & Improvement Opportunities](#-gaps--improvement-opportunities)
 - [🛤️ Roadmap](#-roadmap)
 - [☑️ Success Criteria](#-success-criteria)
-- [📚 Related Documentation](#-related-documentation)
+- [🔗 Related Documentation](#-related-documentation)
 
 ---
 
@@ -69,7 +69,7 @@ Each gap looks for one of four things: a stated-but-unbuilt goal, a doc-vs-doc o
 number or a newly met precondition on an existing gap — see the `update-improvement-plan-gaps` skill.
 *(reusable as-is)*
 
-### 📋 At a Glance
+### 🌳 At a Glance
 
 *(fill in)* Keep this summary in step with the sections below — one line per gap, with its closing version or its
 current Roadmap phase:
@@ -134,7 +134,7 @@ rather than deleting it.
 
 ---
 
-## 📚 Related Documentation
+## 🔗 Related Documentation
 
 See `README.md`'s [📚 Documentation](/README.md#-documentation) section for the full documentation map. Most
 relevant to this plan: *(reusable as-is — add any stack-specific doc this plan draws on, e.g. `UI.md`)*
