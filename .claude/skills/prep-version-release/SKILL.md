@@ -79,14 +79,18 @@ Steps (mirroring AGENTS.md's Release Checklist):
    view for the release's PRs), deduplicated. Replace the previous version's content outright rather than appending.
 7. **Verify links and dates.** Confirm the `v$VERSION` tag slug and the `YYYY-MM-DD` date match between
    `CHANGELOG.md` and `RELEASE_NOTES.md`.
-8. **Extend `HISTORY.md`.** Add a Historical Timeline entry, a Phase and a Milestone for `$VERSION`, at the same
-   narrative depth and style as the existing entries, placed at the top (immediately below the Overview section) to
-   keep reverse chronological order. If the release is significant enough to have shifted the project's trajectory,
-   also thread it through the other version-by-version sections (Architectural Evolution, Feature Timeline, Key
-   Learnings, Future Roadmap, Conclusion/footer), using the immediately preceding version's treatment as the template.
-   Then check whether `documentation/roadmap/improvement-plan.md`'s Goals & Constraints table needs a matching
-   update — it's synthesised partly from `HISTORY.md`'s Future Roadmap Implications sections, so a change here can
-   leave that table stale.
+8. **Extend `HISTORY.md`.** Add a Historical Timeline entry (and a Milestone, if this project's `HISTORY.md` has a
+   Major Milestones section) for `$VERSION`, at the same narrative depth and style as the existing entries, placed
+   at the top (immediately below the Overview section) to keep reverse chronological order. If the release is
+   significant enough to have shifted the project's trajectory, also thread it through the other version-by-version
+   sections (Architectural Evolution, Feature Timeline, Key Learnings, Future Roadmap, Conclusion/footer), using the
+   immediately preceding version's treatment as the template. **Write the Phase entry to
+   `documentation/history/EVOLUTION_OVERVIEW.md`, never to `HISTORY.md` itself** — per AGENTS.md's Documentation
+   File Map, `HISTORY.md`'s "📖 Evolution Overview" section is always split out there, keeping only a short pointer
+   under the same heading/anchor in `HISTORY.md`. Then check whether
+   `documentation/roadmap/improvement-plan.md`'s Goals & Constraints table needs a matching update — it's
+   synthesised partly from `HISTORY.md`'s Future Roadmap Implications sections, so a change here can leave that
+   table stale.
 9. **Update `CONTRIBUTING.md`** only if this version's changes affect developer setup, environment variables,
    development scripts, git workflow or testing conventions documented there.
 10. **Verify `ARCHITECTURE.md`'s Project Structure tree against disk.** Per-change Directory Tree Maintenance still

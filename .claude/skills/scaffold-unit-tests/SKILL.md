@@ -41,8 +41,8 @@ Read and strictly follow **all conventions defined in AGENTS.md** — in particu
    file, or mirrored under a dedicated test root — whichever this project's language/tooling convention is) and its
    naming pattern (e.g. `<Name>.test.ts(x)`, `<ClassName>Test.java`). *(fill in)* Name this project's specific
    target categories and their exact test-file locations/naming — for example:
-   - *Frontend inspiration:* component/layout → `<Name>.test.tsx` in the component's own folder; utility → `<name>.test.ts`
-     alongside the source; hook → tested via a render-hook utility.
+   - *Frontend inspiration:* component/layout → `<Name>.test.tsx` in the component's own folder; utility →
+     `<name>.test.ts` alongside the source; hook → tested via a render-hook utility.
    - *Backend inspiration:* an interface and its implementation get **separate** test classes when both carry
      independent logic (e.g. `XService` → `XServiceTest` against the interface/mocked collaborators; `XServiceImpl`
      → `XServiceImplTest` for impl-only helper methods) — otherwise a single `<ClassName>Test`, mirroring the
