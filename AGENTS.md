@@ -19,7 +19,7 @@ project's own details and delete these template notes once done.
 - [🔧 Environment Variables](#-environment-variables)
 - [🏛️ Architecture](#-architecture)
 - [🔬 Code Quality & CI](#-code-quality--ci)
-- [📚 Documentation Conventions](#-documentation-conventions)
+- [✍️ Documentation Conventions](#-documentation-conventions)
 - [🗺️ Documentation File Map](#-documentation-file-map)
 - [🛤️ Roadmap Planning](#-roadmap-planning)
 - [🧩 Claude Code Skills](#-claude-code-skills)
@@ -33,11 +33,11 @@ project's own details and delete these template notes once done.
 
 ## 📖 Project Overview
 
-*(fill in)* One short paragraph: what the project is, who it's for, and its shape at a glance — e.g. "is a
+*(fill in)* One short paragraph: what the project is, who it's for and its shape at a glance — e.g. "is a
 [frontend/backend/library/CLI] for [domain]". State plainly whether this repository is standalone (no
 backend/frontend counterpart) or one half of a paired frontend/backend system, and link the other half if so.
 
-- **Entry point:** *(fill in)* — e.g. dev server URL, listening port, or CLI command.
+- **Entry point:** *(fill in)* — e.g. dev server URL, listening port or CLI command.
 - **API docs / other key URL:** *(fill in, if applicable)* — e.g. Swagger UI, Storybook, generated docs.
 
 ---
@@ -142,14 +142,14 @@ individual files or classes inside (see [📁 Directory Tree Maintenance](#-dire
 - **Static analysis / security scanning** (e.g. CodeQL): what it runs on and how often.
 - **Linting**: which config, and whether it must report zero warnings (not just zero errors).
 - **Build workflow**: which commands run on push/PR (lint, build, test) and what branches/gates it protects.
-- **Dependency audit**: how often dependencies are reviewed (`npm outdated`/`npm audit`, `mvn versions:display-dependency-updates`,
-  etc.), whether it's advisory-only or blocking, and which dependencies sit on a security-sensitive boundary
-  (user-submitted content, auth, bot protection) and deserve extra scrutiny — read the changelog before upgrading
-  those, not just accepting an automatic bump.
+- **Dependency audit**: how often dependencies are reviewed (`npm outdated`/`npm audit`,
+  `mvn versions:display-dependency-updates`, etc.), whether it's advisory-only or blocking, and which dependencies
+  sit on a security-sensitive boundary (user-submitted content, auth, bot protection) and deserve extra scrutiny —
+  read the changelog before upgrading those, not just accepting an automatic bump.
 
 ---
 
-## 📚 Documentation Conventions
+## ✍️ Documentation Conventions
 
 ### British English
 
@@ -233,8 +233,9 @@ genuinely new concept. Core icons this template already establishes, applicable 
 | 🛤️   | Roadmap                                             |
 | 📚   | Documentation / key learnings                       |
 | 🏛️   | Architecture                                        |
-| 🧪   | Testing                                             |
+| 🧪   | Testing / unreleased changes                        |
 | 🔀   | Git workflow                                        |
+| 🔃   | Data flow                                           |
 | 🚢   | Release process                                     |
 | 🌲   | Evergreen documentation                             |
 | 🔍   | Current state / inspection                          |
@@ -340,12 +341,24 @@ it rather than restating it, so it's the one to update first when a convention c
 These documentation-only folders supplement it:
 
 - **`documentation/history/`** holds one of each of the following files per released version, archived once the
-  release is finalised:
+  release is finalised, plus one standing exception — `EVOLUTION_OVERVIEW.md`, a single living file rather than a
+  per-version archive:
 
-  | File                       | Purpose                                                    |
-  |----------------------------|------------------------------------------------------------|
-  | `RELEASE_NOTES_vX.Y.Z.md`  | Archived snapshot of `RELEASE_NOTES.md` at release time    |
-  | `PR_DESCRIPTION_vX.Y.Z.md` | The release pull request's body, archived for that version |
+  | File                       | Purpose                                                                                                                    |
+  |----------------------------|----------------------------------------------------------------------------------------------------------------------------|
+  | `RELEASE_NOTES_vX.Y.Z.md`  | Archived snapshot of `RELEASE_NOTES.md` at release time                                                                    |
+  | `PR_DESCRIPTION_vX.Y.Z.md` | The release pull request's body, archived for that version                                                                 |
+  | `EVOLUTION_OVERVIEW.md`    | `HISTORY.md`'s companion — the full Phase-by-phase narrative, always split out here to keep `HISTORY.md` a manageable size |
+
+  `HISTORY.md` always keeps its own "📖 Evolution Overview" section as a short pointer to `EVOLUTION_OVERVIEW.md`
+  under the same heading/anchor, so its Table of Contents entry still resolves — the full Phase narrative never
+  lives in `HISTORY.md` itself, even for a project's very first release; every other `HISTORY.md` section
+  (Historical Timeline, Key Learnings, Future Roadmap Implications, Conclusion, etc.) stays in `HISTORY.md`
+  unchanged. *(fill in, if applicable)* Separately, once this folder accumulates enough per-version releases to
+  make browsing it unwieldy, group the archived files into `v<major>/` subdirectories by major version (e.g.
+  `documentation/history/v8/RELEASE_NOTES_v8.6.0.md`), creating a new `v<major>/` folder the first time a release
+  starts a new major version — see the Release Checklist below; `EVOLUTION_OVERVIEW.md` is unaffected, staying
+  directly in `documentation/history/` since it isn't per-version.
 
 - **`documentation/roadmap/`** holds in-progress planning documents that sit outside the standard documentation set
   above — see [🛤️ Roadmap Planning](#-roadmap-planning) below for the file structure and conventions.
@@ -423,7 +436,7 @@ lives. The following structural rules apply regardless of language:
 - Prefer testing behaviour and observable output over implementation details; avoid brittle assertions on
   private/internal state or over-specified mock-call-count checks.
 - Don't write tests whose sole purpose is verifying language/framework/ORM-generated trivial behaviour — e.g. the
-  type system, a generated getter/setter, or a trivial pass-through constructor with no custom logic. Using such
+  type system, a generated getter/setter or a trivial pass-through constructor with no custom logic. Using such
   generated members incidentally to build fixtures or assert real behaviour is fine; only test them directly when
   they're handwritten or contain custom logic.
 - Follow an Arrange-Act-Assert structure, marking each phase present with a comment (`// Arrange`, `// Act`,
@@ -434,6 +447,18 @@ lives. The following structural rules apply regardless of language:
   alphabetically by name (for overloads, by parameter count then parameter type).
 - **Move private helper/fixture methods to the end of the test file**, under a `// Helpers` comment, so the tests
   themselves stay at the top, uninterrupted by setup code.
+- *(fill in, if applicable)* **For a layered, interface-based architecture** (e.g. a service backed by an interface
+  and its own implementation class), split coverage into up to three tiers rather than one do-everything test class:
+  1. A unit test of the interface's own public contract, exercised **through the interface type**, with every
+     dependency mocked.
+  2. A separate unit test for the implementation class's own protected/private helper methods that aren't declared
+     on the interface, likewise fully mocked.
+  3. An integration test exercising the same public contract end-to-end through the real, framework-wired
+     implementation, with no mocks.
+
+  Not every layer needs all three tiers — apply this split only where the interface/impl divide carries genuinely
+  independent logic worth testing separately. See the `scaffold-unit-tests`/`scaffold-integration-tests` skills
+  above for the detailed per-tier scaffolding rules.
 
 ---
 
@@ -540,7 +565,11 @@ before anything downstream references them:
    depth as existing entries, placed at the top for reverse chronological order). If the release is significant
    enough to have shifted the project's trajectory, also thread it through any other sections that track
    version-by-version state. Use how the immediately preceding version was woven into those sections as the
-   template. A routine patch release may only need the Historical Timeline entry.
+   template. A routine patch release may only need the Historical Timeline entry. If the release is significant
+   enough to warrant a new narrative Phase, write that Phase entry to
+   `documentation/history/EVOLUTION_OVERVIEW.md`, not to `HISTORY.md` itself — its "📖 Evolution Overview" section
+   is always split out there (see the Documentation File Map above), keeping only a short pointer under the same
+   heading/anchor so the Table of Contents entry still resolves.
 9. **Update `CONTRIBUTING.md`** only if this version's changes affect developer setup, environment variables,
    development scripts, git workflow or testing conventions documented there.
 10. **Verify `ARCHITECTURE.md`'s Project Structure tree against disk.** Per-change Directory Tree Maintenance
@@ -548,9 +577,13 @@ before anything downstream references them:
     actual repository structure and correct any directory that's missing, renamed or gone stale, including tracked
     tooling directories (`.claude/`, `.github/`).
 11. **Archive `RELEASE_NOTES.md`.** Once finalised, copy it byte-for-byte (no edits, no trimming) to
-    `documentation/history/RELEASE_NOTES_vX.Y.Z.md`.
-12. **Write `documentation/history/PR_DESCRIPTION_vX.Y.Z.md`.** The body text for the release pull request. Keep it
-    small — a PR body, not a second `RELEASE_NOTES.md`: a few bullets per section, high-level only. Structure:
+    `documentation/history/RELEASE_NOTES_vX.Y.Z.md` — or `documentation/history/v<major>/RELEASE_NOTES_vX.Y.Z.md` if
+    this project has adopted the per-major-version subdirectory grouping described in the Documentation File Map
+    above (`<major>` is the leading number of `X.Y.Z` before the first `.`, e.g. `7.2.0` → `v7`; create that
+    `v<major>/` folder first if this is the first release of a new major version).
+12. **Write `documentation/history/PR_DESCRIPTION_vX.Y.Z.md`** (same location as step 11 above). The body text for
+    the release pull request. Keep it small — a PR body, not a second `RELEASE_NOTES.md`: a few bullets per section,
+    high-level only. Structure:
     - `## 🎯 Summary` — two to four bullets on what the release is and why
     - `## 📦 Key Changes` — condensed from the `CHANGELOG.md` entry's categories, high-level rather than exhaustive
     - `## 🧪 Test Plan` — checklist of what was verified (build, lint, tests, manual checks)
