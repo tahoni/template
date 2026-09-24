@@ -12,11 +12,13 @@ Version 1.2.0 is a documentation-only minor release. Until now, this template sh
 and its Claude Code skills. The rest of the documentation set that `AGENTS.md`'s Documentation File Map describes
 (`README.md`, `ARCHITECTURE.md`, `CONTRIBUTING.md`, `HISTORY.md`, `CHANGELOG.md`, `RELEASE_NOTES.md` and
 `LICENSE.md`) was left for each new project to write from scratch. This release adds a fill-in-template scaffold for
-every one of those files, plus optional `UI.md`, `PACKAGES.md` and `HELP.md` scaffolds for stack-specific docs. To make
-room for them at the repository root, the template's own `README.md`, `CHANGELOG.md`, `HISTORY.md` and
-`RELEASE_NOTES.md` move into `documentation/current/`. The template also gets its own release history for the first
-time, backfilled for v1.0.0 and v1.1.0. `HISTORY.md`'s Evolution Overview is now always split out into
-`documentation/history/EVOLUTION_OVERVIEW.md`.
+every one of those files, plus optional `UI.md`, `PACKAGES.md` and `HELP.md` scaffolds for stack-specific docs and
+`documentation/roadmap/` scaffolds for the improvement plan and its task list. To make room at the repository root,
+the template's own `README.md`, `CHANGELOG.md`, `HISTORY.md` and `RELEASE_NOTES.md` move into
+`documentation/current/`. The template also gets its own release history for the first time, backfilled for v1.0.0
+and v1.1.0. `HISTORY.md`'s Evolution Overview is now always split out into
+`documentation/history/EVOLUTION_OVERVIEW.md`, and roadmap headings across the scaffolds and skills now use the icons
+`AGENTS.md`'s registry assigns them.
 
 ---
 
@@ -32,6 +34,9 @@ time, backfilled for v1.0.0 and v1.1.0. `HISTORY.md`'s Evolution Overview is now
 - Optional `UI.md` (from `hpsc-web-vite`), `PACKAGES.md` (from `hpsc-web-vite`) and `HELP.md` (from
   `hpsc-web-springboot`) scaffolds for the stack-specific docs the Documentation File Map already named, each to be
   deleted rather than filled in where it doesn't apply
+- `documentation/roadmap/improvement-plan.md`/`improvement-plan-tasks.md` scaffolds, combining the formats of
+  `hpsc-web-springboot` and `hpsc-web-vite`'s own and using the section headings the
+  `update-improvement-plan-gaps`/`sync-improvement-plan-gaps` skills expect
 
 ### 🗺️ Template's Own Docs Move to documentation/current/
 
@@ -46,6 +51,13 @@ time, backfilled for v1.0.0 and v1.1.0. `HISTORY.md`'s Evolution Overview is now
   `documentation/history/EVOLUTION_OVERVIEW.md`, from a project's very first release onward. Before, the split was an
   optional step for once `HISTORY.md` grew too large. `AGENTS.md`'s Documentation File Map and Release Checklist, and
   the `prep-version-release` skill, now say to write every new Phase entry there
+
+### ✍️ Heading Icons Aligned with the Registry
+
+- Roadmap headings (`HISTORY.md`'s Future Roadmap Implications, `CONTRIBUTING.md`'s and `improvement-plan.md`'s
+  Roadmap) now use `AGENTS.md`'s registered 🛤️ icon instead of a mix of 🗺️ and 🚀, and `improvement-plan.md`'s
+  Success Criteria uses ☑️ instead of ✅, which the registry reserves for completed gap status
+- The `update-improvement-plan-gaps`/`sync-improvement-plan-gaps` skills refer to those headings by the same icons
 
 ---
 
@@ -63,6 +75,8 @@ time, backfilled for v1.0.0 and v1.1.0. `HISTORY.md`'s Evolution Overview is now
   fill-in-template scaffolds at the repository root for a scaffolded project's own copies of these files
 - `LICENSE.md`: fill-in-template MIT licence with `{{year}}`/`{{copyright holder}}` placeholders
 - `UI.md`, `PACKAGES.md` and `HELP.md`: optional fill-in-template scaffolds for stack-specific docs
+- `documentation/roadmap/improvement-plan.md`, `documentation/roadmap/improvement-plan-tasks.md`: fill-in-template
+  scaffolds for a scaffolded project's improvement plan and task list
 
 ### Changed
 
@@ -75,6 +89,14 @@ time, backfilled for v1.0.0 and v1.1.0. `HISTORY.md`'s Evolution Overview is now
   match
 - `README.md`, `CHANGELOG.md`, `HISTORY.md` and `RELEASE_NOTES.md`: this template's own copies moved from the
   repository root into `documentation/current/`
+- Roadmap headings standardised on `AGENTS.md`'s registered 🛤️ icon, and `improvement-plan.md`'s Success Criteria
+  on ☑️, across the `HISTORY.md`/`CONTRIBUTING.md` scaffolds, this template's own `HISTORY.md` and the
+  `improvement-plan.md` scaffold
+
+#### Tooling
+
+- `.claude/skills/update-improvement-plan-gaps`, `.claude/skills/sync-improvement-plan-gaps`: heading references
+  updated to the 🛤️/☑️ icons, and a serial-comma violation fixed in both
 
 ---
 
@@ -87,17 +109,21 @@ No code, schema or dependency changes in this release. For a project already sca
 - If the project's `HISTORY.md` still holds its Evolution Overview narrative inline, move it to
   `documentation/history/EVOLUTION_OVERVIEW.md` and leave a short pointer under the same heading/anchor, per the
   updated Documentation File Map.
+- Copy `documentation/roadmap/` too, and fill it in last, since its improvement plan is synthesised from the rest
+  of the documentation set.
+- If the project's roadmap headings use 🗺️/🚀, or its Success Criteria heading uses ✅, switch them to 🛤️/☑️ and
+  update the two improvement-plan skills to match.
 - Don't copy `documentation/current/`. It holds this template repository's own docs, not scaffolds.
 
 ---
 
 ## 📊 Statistics
 
-- **Total Commits:** 14
-- **Files Changed:** 21
-- **Insertions:** 1,658 lines
-- **Deletions:** 22 lines
-- **Net Change:** +1,636 lines
+- **Total Commits:** 17
+- **Files Changed:** 23
+- **Insertions:** 1,912 lines
+- **Deletions:** 38 lines
+- **Net Change:** +1,874 lines
 
 ---
 
@@ -115,6 +141,9 @@ No code, schema or dependency changes in this release. For a project already sca
 - **Split the Evolution Overview out by construction.** `hpsc-web-springboot` only split its Evolution Overview out
   once it had grown to roughly half of `HISTORY.md`. Splitting it out from the first release means that one-off
   reorganisation is never needed.
+- **Let the icon registry decide, not the sibling projects.** `hpsc-web-springboot` and `hpsc-web-vite` disagree on
+  their roadmap and success-criteria icons. The scaffolds follow `AGENTS.md`'s own registry instead, and the skills
+  that look for those headings by name were updated in the same change.
 
 ---
 
@@ -129,8 +158,9 @@ No code, schema or dependency changes in this release. For a project already sca
 
 ## 🐛 Known Issues
 
-- No `documentation/roadmap/improvement-plan.md`/`improvement-plan-tasks.md` exists yet for this template (carried
-  over from v1.0.0), so the `update-improvement-plan-gaps`/`sync-improvement-plan-gaps` skills have nothing to audit.
+- `documentation/roadmap/` now holds fill-in-template scaffolds, but this template still has no improvement plan of
+  its own (carried over from v1.0.0), so the `update-improvement-plan-gaps`/`sync-improvement-plan-gaps` skills have
+  nothing real to audit here.
 - The template repository still has no `ARCHITECTURE.md`, `CONTRIBUTING.md` or `LICENSE.md` of its own. The
   root-level files with those names are scaffolds for scaffolded projects.
 - The `documentation/history/v1/` archives for v1.0.0 and v1.1.0 had their internal links updated for the

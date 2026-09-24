@@ -14,10 +14,13 @@
 - Root-level scaffolds: `README.md`, `ARCHITECTURE.md`, `CONTRIBUTING.md`, `HISTORY.md`, `CHANGELOG.md`,
   `RELEASE_NOTES.md` and an MIT `LICENSE.md` with placeholders.
 - Optional stack-specific scaffolds: `UI.md`, `PACKAGES.md` and `HELP.md`.
+- Roadmap scaffolds: `documentation/roadmap/improvement-plan.md` and `improvement-plan-tasks.md`.
 - Template's own docs moved to `documentation/current/`, with the release archive grouped into
   `documentation/history/v1/`.
 - `AGENTS.md` Documentation File Map/Release Checklist and the `prep-version-release` skill updated for the
   always-split `EVOLUTION_OVERVIEW.md`.
+- Roadmap and Success Criteria headings aligned with `AGENTS.md`'s icon registry (🛤️, ☑️) across the scaffolds
+  and the two improvement-plan skills.
 
 ## 🧪 Test Plan
 

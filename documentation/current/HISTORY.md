@@ -28,11 +28,15 @@ how its `AGENTS.md` conventions and Claude Code skills have grown over time.
   an MIT `LICENSE.md` with placeholders
 - Optional `UI.md` and `PACKAGES.md` (from `hpsc-web-vite`) and `HELP.md` (from `hpsc-web-springboot`) scaffolds
   added for stack-specific docs, each to be deleted rather than filled in where it doesn't apply
+- `documentation/roadmap/improvement-plan.md`/`improvement-plan-tasks.md` scaffolds added, combining the sibling
+  projects' formats under the section headings the improvement-plan skills expect
 - This template's own `README.md`, `CHANGELOG.md`, `HISTORY.md` and `RELEASE_NOTES.md` moved into
   `documentation/current/` to free the root names for the scaffolds. Its release history was backfilled for v1.0.0
   and v1.1.0, with archives grouped into `documentation/history/v1/`
 - `HISTORY.md`'s Evolution Overview is now always split out into `documentation/history/EVOLUTION_OVERVIEW.md`
   from the first release onward, with `AGENTS.md` and the `prep-version-release` skill updated to match
+- Roadmap and Success Criteria headings aligned with `AGENTS.md`'s icon registry (🛤️, ☑️) across the scaffolds,
+  this template's own `HISTORY.md` and the two improvement-plan skills
 
 ### Version 1.1.0 (September 23, 2026)
 

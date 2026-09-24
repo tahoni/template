@@ -36,9 +36,10 @@ Through v1.1.0, a project adopting this template got `AGENTS.md`'s rules for whi
 write every one of those docs itself. v1.2.0 closes that gap. It ships a fill-in-template scaffold for each file in
 the Documentation File Map (`README.md`, `ARCHITECTURE.md`, `CONTRIBUTING.md`, `HISTORY.md`, `CHANGELOG.md`,
 `RELEASE_NOTES.md` and `LICENSE.md`), plus optional `UI.md`, `PACKAGES.md` and `HELP.md` scaffolds drawn from the
-sibling projects for stack-specific docs. Shipping those scaffolds at the root raised a naming conflict, because the
-template needs real copies of several of the same files for its own history. The template's own docs therefore
-moved into `documentation/current/`. The root now holds only what a new project copies.
+sibling projects for stack-specific docs, and `documentation/roadmap/` scaffolds for the improvement plan its
+roadmap skills audit. Shipping those scaffolds at the root raised a naming conflict, because the template needs
+real copies of several of the same files for its own history. The template's own docs therefore moved into
+`documentation/current/`. The root now holds only what a new project copies.
 
 `hpsc-web-springboot` itself only split its Evolution Overview out of `HISTORY.md` once the section had grown to
 roughly half that file's size — an optional, reactive scaling step. This template instead makes the split mandatory
